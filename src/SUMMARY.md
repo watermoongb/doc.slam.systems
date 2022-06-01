@@ -8,8 +8,15 @@
     - [Register](cloud/register.md)
     - [Login](cloud/login.md)
     - [Forget Password](cloud/forget-password.md)
-    - [Dashboard](cloud/dashboard.md)
-    - [Resources](cloud/resources.md)
+    - [Top Bar](cloud/top-bar.md)
+        - [Account](cloud/account.md)
+        - [Sign out](cloud/sign-out.md)
+    - [Side Bar](cloud/side-bar.md)
+        - [Dashboard](cloud/dashboard.md)
+        - [Resources](cloud/resources.md)
+        - [Users](cloud/users.md)
+        - [Licenses](cloud/licenses.md)
+        - [Product Licenses](cloud/produt-licenses.md)
 
 # Sport Player
 - [Sport Player](player/README.md)
