@@ -14,6 +14,7 @@
 # Sport Player
 - [Sport Player](player/README.md)
     - [Installation](player/installation.md)
+    - [Cloud Licensing](player/active.md)
     - [Playlist Template](player/playlist-template.md)
     - [Configuration](player/config.md)
     - [Start Play](player/start-play.md)
