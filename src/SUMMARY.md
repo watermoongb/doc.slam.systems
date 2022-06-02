@@ -26,8 +26,6 @@
     - [Configuration](player/config.md)
     - [Start Play](player/start-play.md)
     - [Quite Play](player/quit-play.md)
-    - [FQA](player/fqa.md)
-    - [Feedback](player/feedback.md)
 
 # Sport on iPadOS
 - [Sport](sport/README.md)
