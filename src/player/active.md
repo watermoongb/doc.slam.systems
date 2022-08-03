@@ -1,6 +1,6 @@
 # Cloud Licensing Active
 
-The interface of Cloud Licensing
+The interface of Cloud Licensing .
 
 ![Active](active-screenshot.jpg)
 
