@@ -2,8 +2,20 @@
 
 List the main navigation menus. Some menus only allow access to authorized roles.
 
-- Dashboard
-- Resources
-- Users
-- Licenses
-- Product Licenses
+
+1. `User` menus:
+    - Dashboard
+    - Resources
+
+1. `Reseller Organize Admin` menus:
+    - Dashboard
+    - Resources
+    - Users
+    - Clients
+
+1. `Client Organize Admin` menus:
+    - Dashboard
+    - Resources
+    - Users
+    - Licenses
+    - Product Licenses

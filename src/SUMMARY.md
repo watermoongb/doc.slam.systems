@@ -17,6 +17,7 @@
         - [Users](cloud/users.md)
         - [Licenses](cloud/licenses.md)
         - [Product Licenses](cloud/produt-licenses.md)
+        - [Clients](cloud/clients.md)
 
 # Sport Player
 - [Sport Player](player/README.md)
