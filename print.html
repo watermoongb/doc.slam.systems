@@ -9,7 +9,6 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -35,13 +34,13 @@
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,7 +56,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -69,7 +68,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -82,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Online Manual</a></li><li class="chapter-item expanded affix "><li class="part-title">Cloud</li><li class="chapter-item expanded "><a href="cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/register.html"><strong aria-hidden="true">1.1.</strong> Register</a></li><li class="chapter-item expanded "><a href="cloud/login.html"><strong aria-hidden="true">1.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="cloud/forget-password.html"><strong aria-hidden="true">1.3.</strong> Forget Password</a></li><li class="chapter-item expanded "><a href="cloud/top-bar.html"><strong aria-hidden="true">1.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/account.html"><strong aria-hidden="true">1.4.1.</strong> Account</a></li><li class="chapter-item expanded "><a href="cloud/sign-out.html"><strong aria-hidden="true">1.4.2.</strong> Sign out</a></li></ol></li><li class="chapter-item expanded "><a href="cloud/side-bar.html"><strong aria-hidden="true">1.5.</strong> Side Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/dashboard.html"><strong aria-hidden="true">1.5.1.</strong> Dashboard</a></li><li class="chapter-item expanded "><a href="cloud/resources.html"><strong aria-hidden="true">1.5.2.</strong> Resources</a></li><li class="chapter-item expanded "><a href="cloud/users.html"><strong aria-hidden="true">1.5.3.</strong> Users</a></li><li class="chapter-item expanded "><a href="cloud/licenses.html"><strong aria-hidden="true">1.5.4.</strong> Licenses</a></li><li class="chapter-item expanded "><a href="cloud/produt-licenses.html"><strong aria-hidden="true">1.5.5.</strong> Product Licenses</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sport Player</li><li class="chapter-item expanded "><a href="player/index.html"><strong aria-hidden="true">2.</strong> Sport Player</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="player/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="player/active.html"><strong aria-hidden="true">2.2.</strong> Cloud Licensing</a></li><li class="chapter-item expanded "><a href="player/playlist-template.html"><strong aria-hidden="true">2.3.</strong> Playlist Template</a></li><li class="chapter-item expanded "><a href="player/config.html"><strong aria-hidden="true">2.4.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="player/start-play.html"><strong aria-hidden="true">2.5.</strong> Start Play</a></li><li class="chapter-item expanded "><a href="player/quit-play.html"><strong aria-hidden="true">2.6.</strong> Quite Play</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sport on iPadOS</li><li class="chapter-item expanded "><a href="sport/index.html"><strong aria-hidden="true">3.</strong> Sport</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="sport/login.html"><strong aria-hidden="true">3.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="sport/home.html"><strong aria-hidden="true">3.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="sport/top-bar.html"><strong aria-hidden="true">3.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/status-view.html"><strong aria-hidden="true">3.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="sport/time-display.html"><strong aria-hidden="true">3.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="sport/audio-control.html"><strong aria-hidden="true">3.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="sport/fade-control.html"><strong aria-hidden="true">3.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="sport/color-correction.html"><strong aria-hidden="true">3.4.5.</strong> Color Correction</a></li></ol></li><li class="chapter-item expanded "><a href="sport/content.html"><strong aria-hidden="true">3.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/playlist.html"><strong aria-hidden="true">3.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="sport/overview.html"><strong aria-hidden="true">3.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="sport/preview.html"><strong aria-hidden="true">3.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="sport/play-control.html"><strong aria-hidden="true">3.5.4.</strong> Play Control</a></li></ol></li><li class="chapter-item expanded "><a href="sport/bottom-bar.html"><strong aria-hidden="true">3.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/player-sync.html"><strong aria-hidden="true">3.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="sport/settings.html"><strong aria-hidden="true">3.6.2.</strong> Settings</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Online Manual</a></li><li class="chapter-item expanded affix "><li class="part-title">Cloud</li><li class="chapter-item expanded "><a href="cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/register.html"><strong aria-hidden="true">1.1.</strong> Register</a></li><li class="chapter-item expanded "><a href="cloud/login.html"><strong aria-hidden="true">1.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="cloud/forget-password.html"><strong aria-hidden="true">1.3.</strong> Forget Password</a></li><li class="chapter-item expanded "><a href="cloud/top-bar.html"><strong aria-hidden="true">1.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/account.html"><strong aria-hidden="true">1.4.1.</strong> Account</a></li><li class="chapter-item expanded "><a href="cloud/sign-out.html"><strong aria-hidden="true">1.4.2.</strong> Sign out</a></li></ol></li><li class="chapter-item expanded "><a href="cloud/side-bar.html"><strong aria-hidden="true">1.5.</strong> Side Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/dashboard.html"><strong aria-hidden="true">1.5.1.</strong> Dashboard</a></li><li class="chapter-item expanded "><a href="cloud/resources.html"><strong aria-hidden="true">1.5.2.</strong> Resources</a></li><li class="chapter-item expanded "><a href="cloud/users.html"><strong aria-hidden="true">1.5.3.</strong> Users</a></li><li class="chapter-item expanded "><a href="cloud/licenses.html"><strong aria-hidden="true">1.5.4.</strong> Licenses</a></li><li class="chapter-item expanded "><a href="cloud/produt-licenses.html"><strong aria-hidden="true">1.5.5.</strong> Product Licenses</a></li><li class="chapter-item expanded "><a href="cloud/clients.html"><strong aria-hidden="true">1.5.6.</strong> Clients</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sport Player</li><li class="chapter-item expanded "><a href="player/index.html"><strong aria-hidden="true">2.</strong> Sport Player</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="player/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="player/active.html"><strong aria-hidden="true">2.2.</strong> Cloud Licensing</a></li><li class="chapter-item expanded "><a href="player/playlist-template.html"><strong aria-hidden="true">2.3.</strong> Playlist Template</a></li><li class="chapter-item expanded "><a href="player/config.html"><strong aria-hidden="true">2.4.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="player/start-play.html"><strong aria-hidden="true">2.5.</strong> Start Play</a></li><li class="chapter-item expanded "><a href="player/quit-play.html"><strong aria-hidden="true">2.6.</strong> Quite Play</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sport on iPadOS</li><li class="chapter-item expanded "><a href="sport/index.html"><strong aria-hidden="true">3.</strong> Sport</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="sport/login.html"><strong aria-hidden="true">3.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="sport/home.html"><strong aria-hidden="true">3.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="sport/top-bar.html"><strong aria-hidden="true">3.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/status-view.html"><strong aria-hidden="true">3.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="sport/time-display.html"><strong aria-hidden="true">3.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="sport/audio-control.html"><strong aria-hidden="true">3.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="sport/fade-control.html"><strong aria-hidden="true">3.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="sport/color-correction.html"><strong aria-hidden="true">3.4.5.</strong> Color Correction</a></li></ol></li><li class="chapter-item expanded "><a href="sport/content.html"><strong aria-hidden="true">3.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/playlist.html"><strong aria-hidden="true">3.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="sport/overview.html"><strong aria-hidden="true">3.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="sport/preview.html"><strong aria-hidden="true">3.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="sport/play-control.html"><strong aria-hidden="true">3.5.4.</strong> Play Control</a></li></ol></li><li class="chapter-item expanded "><a href="sport/bottom-bar.html"><strong aria-hidden="true">3.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/player-sync.html"><strong aria-hidden="true">3.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="sport/settings.html"><strong aria-hidden="true">3.6.2.</strong> Settings</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -100,7 +99,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +132,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -189,6 +188,25 @@
 <p>Sign out current logged in user and redirect to login page.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="side-bar"><a class="header" href="#side-bar">Side Bar</a></h1>
 <p>List the main navigation menus. Some menus only allow access to authorized roles.</p>
+<ol>
+<li>
+<p><code>User</code> menus:</p>
+<ul>
+<li>Dashboard</li>
+<li>Resources</li>
+</ul>
+</li>
+<li>
+<p><code>Reseller Organize Admin</code> menus:</p>
+<ul>
+<li>Dashboard</li>
+<li>Resources</li>
+<li>Users</li>
+<li>Clients</li>
+</ul>
+</li>
+<li>
+<p><code>Client Organize Admin</code> menus:</p>
 <ul>
 <li>Dashboard</li>
 <li>Resources</li>
@@ -196,8 +214,15 @@
 <li>Licenses</li>
 <li>Product Licenses</li>
 </ul>
+</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dashboard"><a class="header" href="#dashboard">Dashboard</a></h1>
 <p>Provides a summarized overview of pending and registered SLAM SYSTEMS applications as well as latest information on SLAM SYSTEMS products and services.</p>
+<p>You can also confirm your account type here.</p>
+<ul>
+<li>Organization type: <code>Reseller</code>, <code>Client</code></li>
+<li>User Type: <code>User</code>, <code>Orgazation Admin</code></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
 <p>Download the latest SLAM SYSTEMS software as well as versions for older operating systems here.</p>
 <p>You will also find help on how to set up your Player network or building Projects as well as templates for download.</p>
@@ -215,6 +240,14 @@ Click <strong>Create</strong> button after filling in the form.</p>
 <p>An overview of the software products that are connected to your Organization.</p>
 <p>Each of product license including its product, version, license, last updated, status and name.</p>
 <p>Organization manager can <strong>reject</strong>, <strong>accept</strong> license requests in actions menu. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="clients"><a class="header" href="#clients">Clients</a></h1>
+<p>Only the <code>Reseller Organization Admin</code> role can access this.</p>
+<p>Overview of all Clients that under your Organization.</p>
+<p><img src="cloud/resellers.png" alt="Add Client" />
+You can <strong>Add Client</strong> by sending the invite link to your client.</p>
+<h2 id="manage-client-product-licenses"><a class="header" href="#manage-client-product-licenses">Manage Client Product Licenses</a></h2>
+<p>Click more button then in the drop down menu, select <code>PRODUCT LICENSES</code> to <strong>Accept</strong> or <strong>Reject</strong> license for products.</p>
+<p><img src="cloud/client-license-accept.png" alt="Client Product License Accept" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sport-player"><a class="header" href="#sport-player">Sport Player</a></h1>
 <p>Guideline for Sport Player in Mac devices.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
@@ -411,22 +444,22 @@ Once your destination folder selected,the Player will validate the content of fo
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
-        <script type="text/javascript">
+        <script>
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
