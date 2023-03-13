@@ -27,7 +27,7 @@
     - [Configuration](player/config.md)
     - [Start Play](player/start-play.md)
     - [Quite Play](player/quit-play.md)
-    - [Diagnosis](player/diagnosis.md)
+    - [Diagnosis(Available before April 2023)](player/diagnosis.md)
 
 # Sport on iPadOS
 - [Sport](sport/README.md)
