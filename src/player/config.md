@@ -18,24 +18,30 @@
 **Lists of error occur**
 <br/>
 <br/>
-![inValid](config-error.jpg)
+
+![Err1](config-error.jpg)
 
 <br/>
 <br/>
-![inValid](config-Err-partner.jpg)
+
+![Err2](config-Err-partner.jpg)
 
 <br/>
 <br/>
-![inValid](config-Err-notExist.jpg)
+
+![Err3](config-Err-notExist.jpg)
 
 <br/>
 <br/>
-![inValid](config-Err-clip-not-support.jpg)
+
+![Err4](config-Err-clip-not-support.jpg)
 
 <br/>
 <br/>
-![inValid](config-Err-empty-time.jpg)
+
+![Err5](config-Err-empty-time.jpg)
 
 <br/>
 <br/>
-![inValid](config-Err-rowTitle.jpg)
+
+![Err6](config-Err-rowTitle.jpg)
