@@ -26,7 +26,7 @@
     - [Playlist Template](player/playlist-template.md)
     - [Configuration](player/config.md)
     - [Start Play](player/start-play.md)
-    - [Quite Play](player/quit-play.md)
+    - [Quit Play](player/quit-play.md)
     - [Diagnosis(Available before April 2023)](player/diagnosis.md)
 
 # Sport on iPadOS
