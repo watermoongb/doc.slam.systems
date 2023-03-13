@@ -15,33 +15,27 @@
 <br/>
 <br/>
 <br/>
+
 **Lists of error occur**
-<br/>
-<br/>
 
 ![Err1](config-error.jpg)
 
-<br/>
 <br/>
 
 ![Err2](config-Err-partner.jpg)
 
 <br/>
-<br/>
 
 ![Err3](config-Err-notExist.jpg)
 
-<br/>
 <br/>
 
 ![Err4](config-Err-clip-not-support.jpg)
 
 <br/>
-<br/>
 
 ![Err5](config-Err-empty-time.jpg)
 
-<br/>
 <br/>
 
 ![Err6](config-Err-rowTitle.jpg)
