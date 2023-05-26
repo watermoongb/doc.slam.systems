@@ -40,6 +40,7 @@
         - [Audio Control](sport/audio-control.md)
         - [Fade Control](sport/fade-control.md)
         - [Virtual AD (Color Correction)](sport/color-correction.md)
+        - [Brightness](sport/brightness.md)
         - [Color (Current Gain)](sport/gain.md)
     - [Content](sport/content.md)
         - [Playlist](sport/playlist.md)
