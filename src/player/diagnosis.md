@@ -50,7 +50,7 @@ Lower part is playlist preview, when playlist is valid, content is similar to or
 <br/> 
 <br/> 
 <br/> 
-**Here is list reason of invalid content:**
+Here is list reason of invalid content:
 
 'Clip' filed is empty, red border will be around.
 
@@ -64,4 +64,4 @@ Lower part is playlist preview, when playlist is valid, content is similar to or
 
 'ClipTime' field is empty, red border will be around.
 
- *** Notice: 'Sponsor / Clip: Local Partner' and 1-8 field can be empty. ***
+* Notice: 'Sponsor / Clip: Local Partner' and 1-8 field can be empty.
