@@ -1,17 +1,17 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Online Manual</title>
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex">
 
 
         <!-- Custom HTML head -->
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -32,7 +32,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -62,42 +62,71 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Online Manual</a></li><li class="chapter-item expanded affix "><li class="part-title">Cloud</li><li class="chapter-item expanded "><a href="cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/register.html"><strong aria-hidden="true">1.1.</strong> Register</a></li><li class="chapter-item expanded "><a href="cloud/login.html"><strong aria-hidden="true">1.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="cloud/forget-password.html"><strong aria-hidden="true">1.3.</strong> Forget Password</a></li><li class="chapter-item expanded "><a href="cloud/top-bar.html"><strong aria-hidden="true">1.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/account.html"><strong aria-hidden="true">1.4.1.</strong> Account</a></li><li class="chapter-item expanded "><a href="cloud/sign-out.html"><strong aria-hidden="true">1.4.2.</strong> Sign out</a></li></ol></li><li class="chapter-item expanded "><a href="cloud/side-bar.html"><strong aria-hidden="true">1.5.</strong> Side Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/dashboard.html"><strong aria-hidden="true">1.5.1.</strong> Dashboard</a></li><li class="chapter-item expanded "><a href="cloud/resources.html"><strong aria-hidden="true">1.5.2.</strong> Resources</a></li><li class="chapter-item expanded "><a href="cloud/users.html"><strong aria-hidden="true">1.5.3.</strong> Users</a></li><li class="chapter-item expanded "><a href="cloud/licenses.html"><strong aria-hidden="true">1.5.4.</strong> Licenses</a></li><li class="chapter-item expanded "><a href="cloud/produt-licenses.html"><strong aria-hidden="true">1.5.5.</strong> Product Licenses</a></li><li class="chapter-item expanded "><a href="cloud/clients.html"><strong aria-hidden="true">1.5.6.</strong> Clients</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sport Player</li><li class="chapter-item expanded "><a href="player/index.html"><strong aria-hidden="true">2.</strong> Sport Player</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="player/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="player/active.html"><strong aria-hidden="true">2.2.</strong> Cloud Licensing</a></li><li class="chapter-item expanded "><a href="player/playlist-template.html"><strong aria-hidden="true">2.3.</strong> Playlist Template</a></li><li class="chapter-item expanded "><a href="player/config.html"><strong aria-hidden="true">2.4.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="player/start-play.html"><strong aria-hidden="true">2.5.</strong> Start Play</a></li><li class="chapter-item expanded "><a href="player/quit-play.html"><strong aria-hidden="true">2.6.</strong> Quit Play</a></li><li class="chapter-item expanded "><a href="player/diagnosis.html"><strong aria-hidden="true">2.7.</strong> Diagnosis</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sport on iPadOS</li><li class="chapter-item expanded "><a href="sport/index.html"><strong aria-hidden="true">3.</strong> Sport</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="sport/login.html"><strong aria-hidden="true">3.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="sport/home.html"><strong aria-hidden="true">3.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="sport/top-bar.html"><strong aria-hidden="true">3.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/status-view.html"><strong aria-hidden="true">3.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="sport/time-display.html"><strong aria-hidden="true">3.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="sport/audio-control.html"><strong aria-hidden="true">3.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="sport/fade-control.html"><strong aria-hidden="true">3.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="sport/color-correction.html"><strong aria-hidden="true">3.4.5.</strong> Virtual AD (Color Correction)</a></li><li class="chapter-item expanded "><a href="sport/brightness.html"><strong aria-hidden="true">3.4.6.</strong> Brightness</a></li><li class="chapter-item expanded "><a href="sport/gain.html"><strong aria-hidden="true">3.4.7.</strong> Color (Current Gain)</a></li></ol></li><li class="chapter-item expanded "><a href="sport/content.html"><strong aria-hidden="true">3.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/playlist.html"><strong aria-hidden="true">3.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="sport/overview.html"><strong aria-hidden="true">3.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="sport/preview.html"><strong aria-hidden="true">3.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="sport/play-control.html"><strong aria-hidden="true">3.5.4.</strong> Play Control</a></li></ol></li><li class="chapter-item expanded "><a href="sport/bottom-bar.html"><strong aria-hidden="true">3.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/player-sync.html"><strong aria-hidden="true">3.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="sport/shader.html"><strong aria-hidden="true">3.6.2.</strong> Shader</a></li><li class="chapter-item expanded "><a href="sport/settings.html"><strong aria-hidden="true">3.6.3.</strong> Settings</a></li></ol></li><li class="chapter-item expanded "><a href="sport/explaination.html"><strong aria-hidden="true">3.7.</strong> Explaination</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Online Manual</a></li><li class="chapter-item expanded affix "><li class="part-title">Cloud</li><li class="chapter-item expanded "><a href="cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/register.html"><strong aria-hidden="true">1.1.</strong> Register</a></li><li class="chapter-item expanded "><a href="cloud/login.html"><strong aria-hidden="true">1.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="cloud/forget-password.html"><strong aria-hidden="true">1.3.</strong> Forget Password</a></li><li class="chapter-item expanded "><a href="cloud/top-bar.html"><strong aria-hidden="true">1.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/account.html"><strong aria-hidden="true">1.4.1.</strong> Account</a></li><li class="chapter-item expanded "><a href="cloud/sign-out.html"><strong aria-hidden="true">1.4.2.</strong> Sign out</a></li></ol></li><li class="chapter-item expanded "><a href="cloud/side-bar.html"><strong aria-hidden="true">1.5.</strong> Side Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/dashboard.html"><strong aria-hidden="true">1.5.1.</strong> Dashboard</a></li><li class="chapter-item expanded "><a href="cloud/resources.html"><strong aria-hidden="true">1.5.2.</strong> Resources</a></li><li class="chapter-item expanded "><a href="cloud/users.html"><strong aria-hidden="true">1.5.3.</strong> Users</a></li><li class="chapter-item expanded "><a href="cloud/licenses.html"><strong aria-hidden="true">1.5.4.</strong> Licenses</a></li><li class="chapter-item expanded "><a href="cloud/produt-licenses.html"><strong aria-hidden="true">1.5.5.</strong> Product Licenses</a></li><li class="chapter-item expanded "><a href="cloud/clients.html"><strong aria-hidden="true">1.5.6.</strong> Clients</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sport Player</li><li class="chapter-item expanded "><a href="player/index.html"><strong aria-hidden="true">2.</strong> Sport Player</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="player/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="player/active.html"><strong aria-hidden="true">2.2.</strong> Cloud Licensing</a></li><li class="chapter-item expanded "><a href="player/playlist-template.html"><strong aria-hidden="true">2.3.</strong> Playlist Template</a></li><li class="chapter-item expanded "><a href="player/config.html"><strong aria-hidden="true">2.4.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="player/start-play.html"><strong aria-hidden="true">2.5.</strong> Start Play</a></li><li class="chapter-item expanded "><a href="player/quit-play.html"><strong aria-hidden="true">2.6.</strong> Quit Play</a></li><li class="chapter-item expanded "><a href="player/diagnosis.html"><strong aria-hidden="true">2.7.</strong> Diagnosis</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Sport on iPadOS</li><li class="chapter-item expanded "><a href="sport/index.html"><strong aria-hidden="true">3.</strong> Sport</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="sport/login.html"><strong aria-hidden="true">3.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="sport/home.html"><strong aria-hidden="true">3.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="sport/top-bar.html"><strong aria-hidden="true">3.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/status-view.html"><strong aria-hidden="true">3.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="sport/time-display.html"><strong aria-hidden="true">3.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="sport/audio-control.html"><strong aria-hidden="true">3.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="sport/fade-control.html"><strong aria-hidden="true">3.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="sport/color-correction.html"><strong aria-hidden="true">3.4.5.</strong> Virtual AD (Color Correction)</a></li><li class="chapter-item expanded "><a href="sport/brightness.html"><strong aria-hidden="true">3.4.6.</strong> Brightness</a></li><li class="chapter-item expanded "><a href="sport/gain.html"><strong aria-hidden="true">3.4.7.</strong> Color (Current Gain)</a></li></ol></li><li class="chapter-item expanded "><a href="sport/content.html"><strong aria-hidden="true">3.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/playlist.html"><strong aria-hidden="true">3.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="sport/overview.html"><strong aria-hidden="true">3.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="sport/preview.html"><strong aria-hidden="true">3.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="sport/play-control.html"><strong aria-hidden="true">3.5.4.</strong> Play Control</a></li></ol></li><li class="chapter-item expanded "><a href="sport/bottom-bar.html"><strong aria-hidden="true">3.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/player-sync.html"><strong aria-hidden="true">3.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="sport/shader.html"><strong aria-hidden="true">3.6.2.</strong> Shader</a></li><li class="chapter-item expanded "><a href="sport/settings.html"><strong aria-hidden="true">3.6.3.</strong> Settings</a></li></ol></li><li class="chapter-item expanded "><a href="sport/explaination.html"><strong aria-hidden="true">3.7.</strong> Explaination</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">SLAM DECK SOCCER (iPadOS)</li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/index.html"><strong aria-hidden="true">4.</strong> SOCCER</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/installation.html"><strong aria-hidden="true">4.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/login.html"><strong aria-hidden="true">4.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/home.html"><strong aria-hidden="true">4.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/top-bar.html"><strong aria-hidden="true">4.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/status-view.html"><strong aria-hidden="true">4.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/time-display.html"><strong aria-hidden="true">4.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/audio-control.html"><strong aria-hidden="true">4.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/fade-control.html"><strong aria-hidden="true">4.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/color-correction.html"><strong aria-hidden="true">4.4.5.</strong> Virtual AD (Color Correction)</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/brightness.html"><strong aria-hidden="true">4.4.6.</strong> Brightness</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/gain.html"><strong aria-hidden="true">4.4.7.</strong> Color (Current Gain)</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/content.html"><strong aria-hidden="true">4.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/playlist.html"><strong aria-hidden="true">4.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/overview.html"><strong aria-hidden="true">4.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/preview.html"><strong aria-hidden="true">4.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/play-control.html"><strong aria-hidden="true">4.5.4.</strong> Play Control</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/bottom-bar.html"><strong aria-hidden="true">4.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/player-sync.html"><strong aria-hidden="true">4.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/shader.html"><strong aria-hidden="true">4.6.2.</strong> Shader</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/settings.html"><strong aria-hidden="true">4.6.3.</strong> Settings</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/explaination.html"><strong aria-hidden="true">4.7.</strong> Explaination</a></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -172,7 +201,7 @@
 <p>We will contact you according to your registration information as soon as possible, once confirmed, your account will be activated.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="register"><a class="header" href="#register">Register</a></h1>
 <p>Please visit <a href="https://cloud.slam.systems/register">https://cloud.slam.systems/register</a>, fill in Cloud Account Registration form with your Organization information and submit. </p>
-<p>We will contact you within the next 3 business days. After that you will receive a confirmation message from noreply@slam.systems  (please also check your spam/junk filter and junk mailbox just in case).</p>
+<p>We will contact you within the next 3 business days. After that you will receive a confirmation message from <code>noreply@slam.systems</code>  (please also check your spam/junk filter and junk mailbox just in case).</p>
 <p>Organization accounts can add by Organization manager directly. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="login"><a class="header" href="#login">Login</a></h1>
 <p>Login with your Email and password.</p>
@@ -553,6 +582,221 @@ Here is list reason of invalid content:
 <p>The USER section shows current login user information.</p>
 <p><strong>Sign Out</strong> button will logout and back to <a href="sport/login.html">Login Page</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="explaination"><a class="header" href="#explaination">Explaination</a></h1>
+<p><strong>Redundency of iPads</strong></p>
+<ol>
+<li>Main purpose of iPad is control the PLAYER and show information from PLAYER. When the SPORT app quit or iPad shutdown, nothing influence to the PLAYER,
+PLAYER will keep stop or loop play current page of playlist automatically.<br/><br/></li>
+<li>When the SPORT quit or iPad reboot unexpectedly, reopen SPORT and  press SYNC then select Main or Main/Backup player
+SPORT will show the latest information from Main PLYAER. <br/><br/></li>
+<li>Prepare second iPad( SPORT installed) for some emergency case (eg: iPad can't boot, overheat shutdown) is necessary.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sport-1"><a class="header" href="#sport-1">Sport</a></h1>
+<p>Quick Start guide for SLAMDECK LIVE ELS <strong>SPORT</strong>.</p>
+<p><img src="SLAM_DECK_SOCCER/slam_systems.jpg" alt="Preview" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-2"><a class="header" href="#installation-2">Installation</a></h1>
+<p>To install <strong>Sport</strong> app on your iPadOS devices, Requires an iPad running at least iPadOS 15 and oboved.</p>
+<p>Using <strong>App Store</strong> to install.</p>
+<ul>
+<li>Search keyword <em>&quot;SLAM DECK LIVE&quot;</em>.</li>
+<li>Click dowload icon below.</li>
+<li>Scan app's QR code.</li>
+</ul>
+<p><a href="https://apps.apple.com/us/app/slam-deck-live-els/id1584112683?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1650758400&h=eb778ebb21f7a6ef9f068498ed520247" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a></p>
+<p><img src="https://tools-qr-production.s3.amazonaws.com/output/apple-toolbox/617fabacf425c6a1c41348b0f7d3b587/26b52d6c4db1e2045e32e248c8d32ec8.png" alt="Sport QR code" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="login-2"><a class="header" href="#login-2">Login</a></h1>
+<p><img src="SLAM_DECK_SOCCER/login.jpg" alt="Login Page" /></p>
+<ul>
+<li>
+<p><strong>Login</strong>. Use SLAM SYSTEMS cloud account to login.</p>
+</li>
+<li>
+<p><strong>FORGOT PASSWORD</strong>. Click the FORGOT PASSWORD and follow the instruction to reset your password.</p>
+</li>
+<li>
+<p><strong>REMEMBER ME</strong>. Save your password to system keytrain for safety.</p>
+</li>
+</ul>
+<p>Tips: </p>
+<ul>
+<li><em>Only the activate account could login.</em></li>
+<li><em>If you don't have an account, Please see <a href="SLAM_DECK_SOCCER/register.html">1.1 Register</a>.</em></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="home-1"><a class="header" href="#home-1">Home</a></h1>
+<p>The interface of Sport app and its annotation.</p>
+<p><img src="SLAM_DECK_SOCCER/home_interface.png" alt="Home Page" /></p>
+<ul>
+<li><strong>Top Bar</strong>
+<ul>
+<li><strong>Status</strong>: show the status of RECEIVE DATA, MEDIA PLAYER and RUNNING PAGE.</li>
+<li><strong>Audio Control</strong>: Current settings of Audio Control, click to popup its setting view.</li>
+<li><strong>Time Display</strong>: Playing clip time or playlist time.</li>
+<li><strong>Fade Control</strong>: Current settings of Fade Control, click to popup its setting view.</li>
+<li><strong>Color Correction</strong>: Color Correction setting button.</li>
+</ul>
+</li>
+<li><strong>Content</strong>
+<ul>
+<li><strong>Playlist</strong>: Playlist of connected players.</li>
+<li><strong>Overview</strong>: Overview of one playlist. </li>
+<li><strong>Preview</strong>: Preview of one playlist.</li>
+<li><strong>Play Control</strong>: Player control, Previous, Next, Play and Pause.</li>
+</ul>
+</li>
+<li><strong>Bottom Bar</strong>
+<ul>
+<li><strong>C/P Time</strong>: Toogle button switch Time Display between clip Time and Playlist Time.</li>
+<li><strong>P-SYNC</strong>: Player Sync, setup players connection and sync.</li>
+<li><strong>SETTINGS</strong>: Setting Time Display counting and Sign Out. </li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="top-bar-2"><a class="header" href="#top-bar-2">Top Bar</a></h1>
+<p>Including Status View, Time Display and function control views.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="status-view-1"><a class="header" href="#status-view-1">Status View</a></h1>
+<ul>
+<li>
+<p><strong>RECEIVE DATA</strong>: This will show NONE, SYNCHRONIZING, COMPLETE and error message.</p>
+</li>
+<li>
+<p><strong>MEDIA PLAYER</strong>: Showing the connection status CONNECTED or DISCONNECT.</p>
+</li>
+<li>
+<p><strong>RUNNING PAGE</strong>: Shows the current runnig page name. </p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="time-display-1"><a class="header" href="#time-display-1">Time Display</a></h1>
+<p>Time Display format is HH:MM:SS.</p>
+<p>A progress bar of current clip or playlist below the Time, See <strong>C/P TIME</strong> button in <a href="SLAM_DECK_SOCCER/home.html">Bottom Bar</a>.</p>
+<p>To setting counting up/down time please see <a href="SLAM_DECK_SOCCER/setting.html">Settings</a>. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="audio-control-1"><a class="header" href="#audio-control-1">Audio Control</a></h1>
+<p>Audio Control on the Top Bar shows the current settings of audio, for display only.</p>
+<p><img src="SLAM_DECK_SOCCER/audio_control.png" alt="Audio Control" /></p>
+<p>To setup audio, tap on it to popup the setting view.</p>
+<p>Use the vertical slider to adjust the volumn.</p>
+<p>Press <strong>MUTE</strong> button to mute audio, at the same time, the text color change to orange.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fade-control-1"><a class="header" href="#fade-control-1">Fade Control</a></h1>
+<p><img src="SLAM_DECK_SOCCER/fade_control.png" alt="Audio Control" /></p>
+<p>Fade Control on the Top Bar only shows the current settings of cross fade, to setup fade, tap on it to popup the setting view.</p>
+<p>Use the vertical slider to adjust the fade durations.</p>
+<p>Press <strong>GO TO BLACK</strong> button to black screen, at the same time, pause the player.</p>
+<p>Press <strong>RESET</strong> button to restore default settings.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="color-correction-1"><a class="header" href="#color-correction-1">Color Correction</a></h1>
+<p>Color Correction</p>
+<p><img src="SLAM_DECK_SOCCER/color_control.png" alt="Color Control" /></p>
+<p>This function is disable default.</p>
+<p>Use the Color Picker select a color or input your color value. It support real time preview while selecting a color.</p>
+<p>Press <strong>SAVE</strong> button to save your selected color.</p>
+<p>Press <strong>RESET</strong> button to restore last selected color.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="brightness-1"><a class="header" href="#brightness-1">Brightness</a></h1>
+<p><img src="SLAM_DECK_SOCCER/brightness.png" alt="Overview" /></p>
+<ol>
+<li>
+<p>This is function can be work with models of Novastar Controller in VX16s, MCTRL 660 pro, MCTRL 4K.</p>
+</li>
+<li>
+<p>Make sure USB cable connected between Controller and Mac.</p>
+</li>
+<li>
+<p>For more detail please contact Watermoon .</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="color-1"><a class="header" href="#color-1">Color</a></h1>
+<ol>
+<li>This feature may have to upgrade the player's version(Available since 2023.04).</li>
+<li>This feature available for specific models (eg: Nemezes 10AC) and make sure USB cable connected between MAC and NOVAStart controller. When hardware support, control panel will show in top right of SPORT.app ,otherwise is blank. </li>
+<li>Drag then rise up finger will apply to whole screen.</li>
+<li>If Synchronize is on, all the gain value is same as any slider you drag.</li>
+<li>RESET value is not a fix number,it depend on specific LED models.</li>
+<li>For more detail please contact  Watermoon Inc.</li>
+</ol>
+<p><img src="SLAM_DECK_SOCCER/gain-panel.PNG" alt="Panel" /></p>
+<p><img src="SLAM_DECK_SOCCER/gain-diff.PNG" alt="Diff" /></p>
+<p><img src="SLAM_DECK_SOCCER/gain-sync.PNG" alt="Synchronize" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="content-1"><a class="header" href="#content-1">Content</a></h1>
+<p>Page List, Overview of Page and Preview of Page.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="playlist-1"><a class="header" href="#playlist-1">Playlist</a></h1>
+<p><img src="SLAM_DECK_SOCCER/playlist.png" alt="Playlist" /></p>
+<p>If connected to the players, the playlist will be listed here.</p>
+<p>If not connect yet, please go to <a href="SLAM_DECK_SOCCER/player-sync.html">P-SYNC</a>.</p>
+<p>Click one of the playlist go to <a href="SLAM_DECK_SOCCER/overview.html">Overview</a> page.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overview-1"><a class="header" href="#overview-1">Overview</a></h1>
+<p>If connected to the players, the clips of selected playlist will be listed here.</p>
+<p><img src="SLAM_DECK_SOCCER/overview.png" alt="Overview" /></p>
+<p>This layout and contents are same as the Number template.</p>
+<p>Curring playing clip will show with highlight color.</p>
+<p>The <strong>Playlist</strong> row shown on the top-right content page, click the playlist button to switch playlist.</p>
+<p>Click the <strong>OVERVIEW</strong> button will switch to <a href="SLAM_DECK_SOCCER/preview.html">PREVIEW</a> page.</p>
+<p>If the player is not connected yet, please go to <a href="SLAM_DECK_SOCCER/player-sync.html">P-SYNC</a>.</p>
+<h2 id="preset"><a class="header" href="#preset">Preset</a></h2>
+<p>Each clip could has its presets, including <code>GAMMA</code>, <code>CURRENT GAIN</code> and <code>RGB BRITHNESS</code>.</p>
+<p><strong>NOTE</strong>: Nova controller connect to the PLAYER machine by USB is <em>NEEDED</em>.</p>
+<p><img src="SLAM_DECK_SOCCER/preset_all.png" alt="PRESETS" /></p>
+<p>The <code>PRESET</code> button is on the bottom of <a href="SLAM_DECK_SOCCER/overview.html">OVERVIEW</a>  page, next to <code>OVERVIEW</code> button.</p>
+<p>To enable preset mode, just click the <code>PRESET</code> button, then a alert will be shown and confirm you need to enable the preset mode, in case click by mistake.</p>
+<p><strong>NOTE</strong>: It is strongly recommended to enter PRESET mode only during debugging phase.</p>
+<p><img src="SLAM_DECK_SOCCER/preset_mode_alert.png" alt="PRESET MODE" /></p>
+<p>During preset mode, click on a clip to start configuring its preset.</p>
+<p>Each adjustment is saved immediately after the change. </p>
+<p>The selected clip will loop for easy debugging.</p>
+<p>If the clip has a preset, it will appear with magenta highlight border in the Overview list (only during the preset mode).</p>
+<p><img src="SLAM_DECK_SOCCER/preset_list.png" alt="PRESET LIST" /></p>
+<p>Click the <code>EXIT PRESET</code> button to exit PRESET mode.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="preview-1"><a class="header" href="#preview-1">Preview</a></h1>
+<p>List all overviews of current selected playlist.</p>
+<p><img src="SLAM_DECK_SOCCER/preview.png" alt="Preview" /></p>
+<p>Curring playing clip will show with highlight border.</p>
+<p>Click the <strong>PREVIEW</strong> button will switch to <a href="SLAM_DECK_SOCCER/overview.html">OVERVIEW</a> page.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="play-control-1"><a class="header" href="#play-control-1">Play Control</a></h1>
+<p>Control the player, including Previous, Next, Play and Pause.</p>
+<p>We have to connect the player and sync (See <a href="SLAM_DECK_SOCCER/player-sync.html">P-SYNC</a>) first to have these controls.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bottom-bar-1"><a class="header" href="#bottom-bar-1">Bottom Bar</a></h1>
+<p>App name, copyright and function buttons.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="p-sync-1"><a class="header" href="#p-sync-1">P-SYNC</a></h1>
+<p><img src="SLAM_DECK_SOCCER/players-sync.png" alt="Players Sync" /></p>
+<ol>
+<li>Tap <strong>P-SYNC</strong> button;</li>
+<li>Check the circle box to select Players;</li>
+<li>Click <strong>SYNC</strong> button to start connection and synchornise.</li>
+</ol>
+<p>The PROCESS bar showing the sync progress, disappears after sync is complete. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shader-1"><a class="header" href="#shader-1">SHADER</a></h1>
+<p><img src="SLAM_DECK_SOCCER/shader-reality.jpg" alt="Overview" /></p>
+<ol>
+<li>
+<p>Tap <strong>SHADER</strong> button
+<img src="SLAM_DECK_SOCCER/gain-Overview.PNG" alt="Overview" />
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></p>
+</li>
+<li>
+<p>Config Panel 
+<img src="SLAM_DECK_SOCCER/shader-adjusting.PNG" alt="Adjusting" />
+<br/>
+<br/>
+<br/></p>
+</li>
+<li>
+<p>Enable/Disable SHADER layout or transparent condition 
+<img src="SLAM_DECK_SOCCER/shader-config.PNG" alt="Adjusting" />
+<br/>
+<br/>
+<br/></p>
+</li>
+<li>
+<p>Adjusting shader range or long press the shader bar is can be drag to change shader position.</p>
+</li>
+</ol>
+<p><img src="SLAM_DECK_SOCCER/shader-range.jpg" alt="Adjusting" /></p>
+<p><img src="SLAM_DECK_SOCCER/shader-drag.jpg" alt="Adjusting" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="settings-1"><a class="header" href="#settings-1">Settings</a></h1>
+<p>Setting Time Display counting and Sign Out.</p>
+<p>Count Up/Down for Playlist Time and Clip Time can be set separately.</p>
+<p>The USER section shows current login user information.</p>
+<p><strong>Sign Out</strong> button will logout and back to <a href="SLAM_DECK_SOCCER/login.html">Login Page</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="explaination-1"><a class="header" href="#explaination-1">Explaination</a></h1>
 <p><strong>Redundency of iPads</strong></p>
 <ol>
 <li>Main purpose of iPad is control the PLAYER and show information from PLAYER. When the SPORT app quit or iPad shutdown, nothing influence to the PLAYER,
