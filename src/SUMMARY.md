@@ -48,6 +48,7 @@
         - [Preview](sport/preview.md)
         - [Play Control](sport/play-control.md)
     - [Bottom Bar](sport/bottom-bar.md)
+        - [TIMEOUT](sport/timeout.md)
         - [P-SYNC](sport/player-sync.md)
         - [Shader](sport/shader.md)
         - [Settings](sport/settings.md)
