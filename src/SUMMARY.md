@@ -29,7 +29,7 @@
     - [Quit Play](player/quit-play.md)
     - [Diagnosis](player/diagnosis.md)
 
-# Sport on iPadOS
+# SLAM DECK HANDBALL (iPadOS)
 - [Sport](sport/README.md)
     - [Installation](sport/installation.md)
     - [Login](sport/login.md)

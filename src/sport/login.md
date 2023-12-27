@@ -1,6 +1,6 @@
 # Login
 
-![Login Page](login.jpg)
+![Login Page](login_new.png)
 
 - **Login**. Use SLAM SYSTEMS cloud account to login.
 
