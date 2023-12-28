@@ -2,7 +2,7 @@
 
 ## Noticement
 
-1. Playlist MUST `#ffffff` contain overlay of OVERLAY list and it's content, otherwise,  OVERLAY function can not works properly.
+1. Playlist MUST contain overlay of OVERLAY list and it's content, otherwise,  OVERLAY function can not works properly.
 
 
 ## Preview
