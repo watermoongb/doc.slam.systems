@@ -40,7 +40,6 @@
         - [Audio Control](sport/audio-control.md)
         - [Fade Control](sport/fade-control.md)
         - [Brightness](sport/brightness.md)
-        - [Color (Current Gain)](sport/gain.md)
     - [Content](sport/content.md)
         - [Playlist](sport/playlist.md)
         - [Overview](sport/overview.md)
@@ -50,7 +49,6 @@
     - [Bottom Bar](sport/bottom-bar.md)
         - [TIMEOUT](sport/timeout.md)
         - [P-SYNC](sport/player-sync.md)
-        - [Shader](sport/shader.md)
         - [Settings](sport/settings.md)
     - [Explaination](sport/explaination.md)
 
