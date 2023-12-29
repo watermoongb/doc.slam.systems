@@ -554,25 +554,48 @@ Here is list reason of invalid content:
 <div style="break-before: page; page-break-before: always;"></div><h1 id="timeout"><a class="header" href="#timeout">TIMEOUT</a></h1>
 <h2 id="noticement-1"><a class="header" href="#noticement-1">Noticement</a></h2>
 <ol>
-<li>Playlist MUST contain teaser list and it's content, otherwise,  teaser function can not works properly.</li>
-<li>The codec of teaser clip  MUST using Apple ProRes 4444 and alpha channel, otherwise teaser function can not be apply or unpredictable result,<br/> 
-please well-communicate with the video post-producer to ensure that this function works properly . </li>
-<li>Playlist MUST contain timeout list and it's content, otherwise only teaser content overlay in normal playlist content.</li>
+<li>
+<p>Playlist <strong>MUST</strong> contain teaser list and it's content, otherwise,  teaser function can not works properly.</p>
+</li>
+<li>
+<p>The codec of teaser clip  <strong>MUST</strong> using <code>Apple ProRes 4444</code> and contain alpha channel, otherwise teaser function can not be apply or unpredictable result.</p>
+<p><img src="sport/Timeout-teaserCodec.jpg" alt="Codec" /></p>
+</li>
 </ol>
+<p><code>TEASER</code> list must contain 2 clips, the player use the first clip as home team teaser and the second clip is guest team teaser content.</p>
+<p><img src="sport/Timeout-TeaserPlaylist.jpg" alt="Teaser" /></p>
+<p><img src="sport/Timeout-homeTeaserDemo.jpg" alt="TeaserHome" />
+<img src="sport/Timeout-TeaserHome.jpg" alt="TeaserHome2" /></p>
+<p><img src="sport/Timeout-guestTeaserDemo.jpg" alt="TeaserGuest" />
+<img src="sport/Timeout-TeaserGuest.jpg" alt="TeaserGuest2" /></p>
+<ol>
+<li>
+<p>Playlist <strong>MUST</strong> contain timeout list and it's content, 
+otherwise only teaser content overlay in normal playlist content.</p>
+<p><img src="sport/Timeout-TeaserPlaylist.jpg" alt="Teaser" /></p>
+<p><strong>Sample of timeout list</strong> </p>
+</li>
+</ol>
+<p><img src="sport/Timeout-Playlist.jpg" alt="Timeout" /></p>
 <h2 id="preview-2"><a class="header" href="#preview-2">Preview</a></h2>
 <p><img src="sport/timeout-Preview.png" alt="Overview" /></p>
 <h2 id="demostration-1"><a class="header" href="#demostration-1">Demostration</a></h2>
 <p><img src="sport/Timeout-Preview2.jpg" alt="Step1" /></p>
-<p><strong>Press Home</strong></p>
-<p>Press Home team button 
+<p><strong>Home team request timeout</strong>
+press home team button. 
 <img src="sport/Timeout-PressHome.jpg" alt="Step2" /></p>
-<p>home team teaser content is overlay in clip
+<p>home team teaser content is overlay in clip until countdown run to zero.
 <img src="sport/Timeout-TeaserHome.jpg" alt="Step3" /></p>
-<p><strong>Press Guest</strong></p>
+<p><strong>Guest team request timeout</strong></p>
 <p>Guest Home team button 
 <img src="sport/Timeout-PressGuest.jpg" alt="Step2" /></p>
-<p>Guest teaser content is overlay on normal clip
-<img src="sport/Timeout-TeaserGuest.jpg" alt="Step3" /></p>
+<p>Guest teaser content is overlay on normal clip until countdown run to zero.</p>
+<p><img src="sport/Timeout-TeaserGuest.jpg" alt="Step3" /></p>
+<p><strong>Switch timeout clip</strong></p>
+<p>Simply tap other thumbnail, when countdown run to zero, timeout will stop, you can not change it anymore.</p>
+<p><strong>Cancel timeout by manually</strong></p>
+<p>Just long press <code>TIMEOUT</code> button until blinking stop then teaser content and timeout content will disappear.</p>
+<p><img src="sport/Timeout-cancel.jpg" alt="Step3" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="p-sync"><a class="header" href="#p-sync">P-SYNC</a></h1>
 <p><img src="sport/players-sync.png" alt="Players Sync" /></p>
 <ol>
