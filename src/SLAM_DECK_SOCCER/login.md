@@ -10,4 +10,4 @@
 
 Tips: 
 - *Only the activate account could login.*
-- *If you don't have an account, Please see [1.1 Register](register.md).*
+- *If you don't have an account, Please see [1.1 Register](../cloud/register.html).*
