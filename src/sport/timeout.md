@@ -18,7 +18,7 @@
    ![TeaserGuest2](Timeout-TeaserGuest.jpg)
 
 1. Playlist **MUST** contain timeout list and it's content, 
-   otherwise only teaser content overlay in normal playlist content.
+   otherwise only teaser content overlay in playing content.
    
    ![Teaser](Timeout-TeaserPlaylist.jpg)
 
@@ -38,31 +38,53 @@
 ## Demostration
 ![Step1](Timeout-Preview2.jpg)
 
-**Home team request timeout**
-press home team button. 
+**Home team ask timeout request **
+press home team buzzer
 ![Step2](Timeout-PressHome.jpg)
 
 
-home team teaser content is overlay in clip until countdown run to zero.
+home team teaser content is overlay in normal playing clip.
 ![Step3](Timeout-TeaserHome.jpg)
 
 **Guest team request timeout**
 
-Guest Home team button 
+Guest Home team buzzer 
 ![Step2](Timeout-PressGuest.jpg)
 
 
-Guest teaser content is overlay on normal clip until countdown run to zero.
+Guest teaser content is overlay in normal playing clip.
 
 ![Step3](Timeout-TeaserGuest.jpg)
 
+**Play timeout clip**
+
+Just simply tap  thumbnail and countdown start running,
+once countdown running, it will stop automatically when count to ZERO.
+
+
 **Switch timeout clip**
 
-Simply tap other thumbnail, when countdown run to zero, timeout will stop, you can not change it anymore.
+Simply tap another thumbnail, when countdown run to zero 
+
+timeout will stop and teaser content and timeout clip will disappear.
+
+and back to normal playing content.
+
+
+**Setting countdown's seconds**
+
+Default countdown seconds is 30 seconds,
+
+modify countdown in below steps:
+
+Tap the right-bottom `SETTING` --> `INTERMISSION` --> `Time-out` --> 00:30(Just for reference)
+
+![Step3](Timeout-countdown-seconds.jpg)
 
 
 **Cancel timeout by manually**
 
 Just long press `TIMEOUT` button until blinking stop then teaser content and timeout content will disappear.
+
 
 ![Step3](Timeout-cancel.jpg)
