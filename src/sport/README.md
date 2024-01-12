@@ -1,5 +1,5 @@
-# Sport
+# SLAM DECK HANDBALL PRO (iPadOS)
 
-Quick Start guide for SLAMDECK LIVE ELS **SPORT**.
+Quick Start guide for **HANDBALL PRO**.
 
 ![Preview](slam_systems.jpg)
