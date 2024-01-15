@@ -9,9 +9,10 @@ The suite consists of the following applications:
     - Licenses
     - Products
     
-* **[Sport Player](player/index.md)** delivers rock solid playback performance on macOS.
+* **[SLAM PLAYER HD](player/index.md)** delivers rock solid playback performance on macOS.
 
-* **[Sport iPadOS](sport/index.md)** app that can easily manage and remote control player.
+* **[SLAM DECK HANDBALL](sport/index.md)** `HANDBALL` app that can easily manage and remote control `PLAYER HD`.
 
+* **[SLAM DECK SOCCER](SLAM_DECK_SOCCER/index.md)** `SOCCER` app that can easily manage and remote control `PLAYER HD`.
 
 Try using the search function or browse the Help Topics to find the information you’re looking for.

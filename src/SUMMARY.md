@@ -19,8 +19,8 @@
         - [Product Licenses](cloud/produt-licenses.md)
         - [Clients](cloud/clients.md)
 
-# Sport Player
-- [Sport Player](player/README.md)
+# PLAYER HD
+- [PLAYER HD](player/README.md)
     - [Installation](player/installation.md)
     - [Cloud Licensing](player/active.md)
     - [Playlist Template](player/playlist-template.md)
@@ -30,7 +30,7 @@
     - [Diagnosis](player/diagnosis.md)
 
 # SLAM DECK HANDBALL (iPadOS)
-- [Sport](sport/README.md)
+- [HANDBALL](sport/README.md)
     - [Installation](sport/installation.md)
     - [Login](sport/login.md)
     - [Home](sport/home.md)
