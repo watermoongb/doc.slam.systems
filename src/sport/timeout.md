@@ -38,7 +38,8 @@
 ## Demostration
 ![Step1](Timeout-Preview2.jpg)
 
-**Home team ask timeout request **
+**Home team ask timeout request**
+
 press home team buzzer
 ![Step2](Timeout-PressHome.jpg)
 
@@ -48,7 +49,7 @@ home team teaser content is overlay in normal playing clip.
 
 **Guest team request timeout**
 
-Guest Home team buzzer 
+press guest Home team buzzer 
 ![Step2](Timeout-PressGuest.jpg)
 
 
