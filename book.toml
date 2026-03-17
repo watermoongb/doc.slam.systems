@@ -2,5 +2,4 @@
 title = "Online Manual"
 authors = ["SLAM.SYSTEMS"]
 language = "en"
-multilingual = false
 src = "src"
