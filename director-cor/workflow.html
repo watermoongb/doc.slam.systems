@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Workflow - Online Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Online Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="workflow-overview"><a class="header" href="#workflow-overview">Workflow Overview</a></h1>
+<p>This chapter describes a complete workflow from <strong>creating a new project</strong> to <strong>publishing to devices</strong>.<br />
+The example uses a <strong>Numbers spreadsheet template</strong> and multiple playback devices; you can adapt it to your own setup.</p>
+<p>High-level steps:</p>
+<ol>
+<li>Create a new DIRECTOR COR project</li>
+<li>Import a playlist from a Numbers template</li>
+<li>Select the Numbers template file in the system file picker</li>
+<li>Open the Device Settings window</li>
+<li>Discover and add devices on the local network</li>
+<li>Review and manage the device list</li>
+<li>Publish and monitor sync progress</li>
+<li>Confirm publish completion</li>
+</ol>
+<h1 id="step-1-create-a-new-project"><a class="header" href="#step-1-create-a-new-project">Step 1: Create a New Project</a></h1>
+<p><img src="1.create_project.png" alt="Create Project" /></p>
+<ol>
+<li>From the top menu choose <code>File</code> → <code>New</code>, or use the keyboard shortcut to create a new document.</li>
+<li>After creation, the window title shows <code>Untitled</code>, and both the <code>Assets</code> and <code>Playlist</code> areas are empty.</li>
+<li>The <code>Preview / Layout</code> switch is already visible in the top-right corner, but there is no content to preview yet.</li>
+</ol>
+<h1 id="step-2-import-from-a-numbers-template"><a class="header" href="#step-2-import-from-a-numbers-template">Step 2: Import from a Numbers Template</a></h1>
+<p><img src="2.import_menu.png" alt="Import Menu" /></p>
+<ol>
+<li>In the <code>Playlist</code> area at the bottom-left, click the <code>+</code> button.</li>
+<li>In the pop-up menu, choose <strong>Import…</strong>.</li>
+<li>The import feature can read an external template (such as a Numbers spreadsheet) and automatically generate playlist items and timeline entries.</li>
+</ol>
+<h3 id="if-prompted-grant-system-permissions"><a class="header" href="#if-prompted-grant-system-permissions">If prompted: grant system permissions</a></h3>
+<p>During the first import, macOS may prompt you to grant permissions so DIRECTOR COR can automate Numbers and control the UI:</p>
+<p><img src="2-1.import-Accessibility-Access.png" alt="Accessibility Access prompt" /></p>
+<ul>
+<li>Click <strong>Open System Settings</strong> to grant Accessibility access.</li>
+</ul>
+<p><img src="2-2.import-Automation.png" alt="Automation prompt" /></p>
+<ul>
+<li>Click <strong>Allow</strong> to permit DIRECTOR COR to control <code>Numbers.app</code>.</li>
+</ul>
+<p>Then, in System Settings → Privacy &amp; Security:</p>
+<p><img src="2-3.Accessibility-Access.png" alt="Accessibility list" /></p>
+<ul>
+<li>Ensure <strong>DIRECTOR COR</strong> is enabled under Accessibility.</li>
+</ul>
+<p><img src="2-4.Automation.png" alt="Automation list" /></p>
+<ul>
+<li>Under Automation, expand <strong>DIRECTOR COR</strong> and enable control of <strong>Numbers</strong> (and other required apps, if listed).</li>
+</ul>
+<h1 id="step-3-choose-the-numbers-template-file"><a class="header" href="#step-3-choose-the-numbers-template-file">Step 3: Choose the Numbers Template File</a></h1>
+<p><img src="3.select_number_template.png" alt="Select Number Template" /></p>
+<ol>
+<li>In the system file picker, navigate to the folder that contains your template.</li>
+<li>Select the prepared Numbers template (for example <code>HCKL_Overlay</code>), and make sure its structure matches the DIRECTOR COR import format.</li>
+<li>Click <strong>Open</strong>. DIRECTOR COR parses the template and generates the corresponding playlist and Editor rows.</li>
+</ol>
+<h1 id="step-4-open-device-settings"><a class="header" href="#step-4-open-device-settings">Step 4: Open Device Settings</a></h1>
+<p><img src="4.setting_devices.png" alt="Setting Devices" /></p>
+<ol>
+<li>After the import has created your playlist, open the Device Settings window (typically via the Settings icon or menu).</li>
+<li>In the dialog that appears, switch to the <strong>Devices</strong> tab.</li>
+<li>At the top, choose the current Player type (for example <code>SLAM DECK COR</code>) so that only relevant devices are shown.</li>
+</ol>
+<h1 id="step-5-discover-and-add-devices"><a class="header" href="#step-5-discover-and-add-devices">Step 5: Discover and Add Devices</a></h1>
+<p><img src="5.adding_devices.png" alt="Adding Devices" /></p>
+<ol>
+<li>In the Devices window, click <strong>Add New Device</strong> to start scanning the local network.</li>
+<li>The <strong>Devices in Local Network</strong> sheet lists available players and control devices, including:
+<ul>
+<li>Device name (for example <code>slam.systems_sev16-1-Tahoe</code>)</li>
+<li>Device type (<code>Player</code> or <code>SLAM DECK COR</code>)</li>
+<li>IP address</li>
+</ul>
+</li>
+<li>Select the devices you want to use for this project, then click <strong>Add</strong> to add them to the device list.</li>
+</ol>
+<h1 id="step-6-manage-the-device-list"><a class="header" href="#step-6-manage-the-device-list">Step 6: Manage the Device List</a></h1>
+<p><img src="6.devices_list.png" alt="Devices List" /></p>
+<ol>
+<li>Back in the main Devices window you can now see all added devices:
+<ul>
+<li>Each row shows the name, IP address, version, device type, and more.</li>
+<li>Use the checkboxes on the left to choose which devices should receive the current project.</li>
+</ul>
+</li>
+<li>The action buttons on the right can be used to:
+<ul>
+<li>Test connectivity</li>
+<li>Re-sync</li>
+<li>Remove the device from the list</li>
+</ul>
+</li>
+<li>When everything looks correct, click <strong>Done</strong> to return to the main window.</li>
+</ol>
+<h1 id="step-7-publish-and-monitor-sync-progress"><a class="header" href="#step-7-publish-and-monitor-sync-progress">Step 7: Publish and Monitor Sync Progress</a></h1>
+<p><img src="7.publish_progressing.png" alt="Publish Progressing" /></p>
+<ol>
+<li>Click the <strong>Publish</strong> cloud icon in the top-right corner to start the publish process.</li>
+<li>The <strong>Syncing with Devices</strong> window shows sync progress for each device:
+<ul>
+<li>“Syncing…” indicates that data is being transferred or processed</li>
+<li>A progress bar shows the current percentage</li>
+</ul>
+</li>
+<li>While publishing, keep the network connection stable and avoid closing the app or target devices.</li>
+</ol>
+<h1 id="step-8-publishing-complete"><a class="header" href="#step-8-publishing-complete">Step 8: Publishing Complete</a></h1>
+<p><img src="8.publish_finish.png" alt="Publish Finish" /></p>
+<ol>
+<li>When the status for all devices changes to <strong>Completed</strong>, the top of the window shows <strong>Sync completed for all devices</strong>.</li>
+<li>At this point, the playlist has been successfully distributed to all selected Player and SLAM DECK COR devices.</li>
+<li>Click <strong>Close</strong> to dismiss the dialog, then verify playback on site or in your test environment.</li>
+</ol>
+<p>With these steps, you complete the full DIRECTOR COR workflow: create a project, import a template, connect devices, and publish your playlists.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../director-cor/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../director-cor/top-bar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../director-cor/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../director-cor/top-bar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

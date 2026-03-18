@@ -1,0 +1,70 @@
+// Populate the sidebar
+//
+// This is a script, and not included directly in the page, to control the total size of the book.
+// The TOC contains an entry for each page, so if each page includes a copy of the TOC,
+// the total size of the page becomes O(n**2).
+class MDBookSidebarScrollbox extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        this.innerHTML = '<ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Online Manual</a></li><li class="chapter-item expanded affix "><li class="part-title">DIRECTOR COR (macOS)</li><li class="chapter-item expanded "><a href="director-cor/index.html"><strong aria-hidden="true">1.</strong> DIRECTOR COR</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="director-cor/workflow.html"><strong aria-hidden="true">1.1.</strong> Workflow</a></li><li class="chapter-item expanded "><a href="director-cor/top-bar.html"><strong aria-hidden="true">1.2.</strong> Top Bar</a></li><li class="chapter-item expanded "><a href="director-cor/assets.html"><strong aria-hidden="true">1.3.</strong> ASSETS Panel</a></li><li class="chapter-item expanded "><a href="director-cor/playlist.html"><strong aria-hidden="true">1.4.</strong> PLAYLIST Panel</a></li><li class="chapter-item expanded "><a href="director-cor/editor.html"><strong aria-hidden="true">1.5.</strong> EDITOR</a></li><li class="chapter-item expanded "><a href="director-cor/inspector.html"><strong aria-hidden="true">1.6.</strong> INSPECTOR</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Cloud</li><li class="chapter-item expanded "><a href="cloud/index.html"><strong aria-hidden="true">2.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/register.html"><strong aria-hidden="true">2.1.</strong> Register</a></li><li class="chapter-item expanded "><a href="cloud/login.html"><strong aria-hidden="true">2.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="cloud/forget-password.html"><strong aria-hidden="true">2.3.</strong> Forget Password</a></li><li class="chapter-item expanded "><a href="cloud/top-bar.html"><strong aria-hidden="true">2.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/account.html"><strong aria-hidden="true">2.4.1.</strong> Account</a></li><li class="chapter-item expanded "><a href="cloud/sign-out.html"><strong aria-hidden="true">2.4.2.</strong> Sign out</a></li></ol></li><li class="chapter-item expanded "><a href="cloud/side-bar.html"><strong aria-hidden="true">2.5.</strong> Side Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/dashboard.html"><strong aria-hidden="true">2.5.1.</strong> Dashboard</a></li><li class="chapter-item expanded "><a href="cloud/resources.html"><strong aria-hidden="true">2.5.2.</strong> Resources</a></li><li class="chapter-item expanded "><a href="cloud/users.html"><strong aria-hidden="true">2.5.3.</strong> Users</a></li><li class="chapter-item expanded "><a href="cloud/licenses.html"><strong aria-hidden="true">2.5.4.</strong> Licenses</a></li><li class="chapter-item expanded "><a href="cloud/produt-licenses.html"><strong aria-hidden="true">2.5.5.</strong> Product Licenses</a></li><li class="chapter-item expanded "><a href="cloud/clients.html"><strong aria-hidden="true">2.5.6.</strong> Clients</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">PLAYER HD</li><li class="chapter-item expanded "><a href="player/index.html"><strong aria-hidden="true">3.</strong> PLAYER HD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="player/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="player/active.html"><strong aria-hidden="true">3.2.</strong> Cloud Licensing</a></li><li class="chapter-item expanded "><a href="player/playlist-template.html"><strong aria-hidden="true">3.3.</strong> Playlist Template</a></li><li class="chapter-item expanded "><a href="player/config.html"><strong aria-hidden="true">3.4.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="player/start-play.html"><strong aria-hidden="true">3.5.</strong> Start Play</a></li><li class="chapter-item expanded "><a href="player/quit-play.html"><strong aria-hidden="true">3.6.</strong> Quit Play</a></li><li class="chapter-item expanded "><a href="player/diagnosis.html"><strong aria-hidden="true">3.7.</strong> Diagnosis</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">SLAM DECK HANDBALL (iPadOS)</li><li class="chapter-item expanded "><a href="sport/index.html"><strong aria-hidden="true">4.</strong> HANDBALL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/installation.html"><strong aria-hidden="true">4.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="sport/login.html"><strong aria-hidden="true">4.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="sport/home.html"><strong aria-hidden="true">4.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="sport/top-bar.html"><strong aria-hidden="true">4.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/status-view.html"><strong aria-hidden="true">4.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="sport/time-display.html"><strong aria-hidden="true">4.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="sport/audio-control.html"><strong aria-hidden="true">4.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="sport/fade-control.html"><strong aria-hidden="true">4.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="sport/brightness.html"><strong aria-hidden="true">4.4.5.</strong> Brightness</a></li><li class="chapter-item expanded "><a href="sport/brightnessExtra.html"><strong aria-hidden="true">4.4.6.</strong> RGB Brightness</a></li></ol></li><li class="chapter-item expanded "><a href="sport/content.html"><strong aria-hidden="true">4.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/playlist.html"><strong aria-hidden="true">4.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="sport/overview.html"><strong aria-hidden="true">4.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="sport/preview.html"><strong aria-hidden="true">4.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="sport/play-control.html"><strong aria-hidden="true">4.5.4.</strong> Play Control</a></li><li class="chapter-item expanded "><a href="sport/overlay.html"><strong aria-hidden="true">4.5.5.</strong> Overlay</a></li><li class="chapter-item expanded "><a href="sport/timeout.html"><strong aria-hidden="true">4.5.6.</strong> TIMEOUT</a></li></ol></li><li class="chapter-item expanded "><a href="sport/bottom-bar.html"><strong aria-hidden="true">4.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/player-sync.html"><strong aria-hidden="true">4.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="sport/settings.html"><strong aria-hidden="true">4.6.2.</strong> Settings</a></li></ol></li><li class="chapter-item expanded "><a href="sport/explaination.html"><strong aria-hidden="true">4.7.</strong> Explaination</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">SLAM DECK SOCCER (iPadOS)</li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/index.html"><strong aria-hidden="true">5.</strong> SOCCER</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/installation.html"><strong aria-hidden="true">5.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/login.html"><strong aria-hidden="true">5.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/home.html"><strong aria-hidden="true">5.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/top-bar.html"><strong aria-hidden="true">5.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/status-view.html"><strong aria-hidden="true">5.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/time-display.html"><strong aria-hidden="true">5.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/audio-control.html"><strong aria-hidden="true">5.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/fade-control.html"><strong aria-hidden="true">5.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/color-correction.html"><strong aria-hidden="true">5.4.5.</strong> Virtual AD (Color Correction)</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/brightness.html"><strong aria-hidden="true">5.4.6.</strong> Brightness</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/gain.html"><strong aria-hidden="true">5.4.7.</strong> Color (Current Gain)</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/content.html"><strong aria-hidden="true">5.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/playlist.html"><strong aria-hidden="true">5.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/overview.html"><strong aria-hidden="true">5.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/preview.html"><strong aria-hidden="true">5.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/play-control.html"><strong aria-hidden="true">5.5.4.</strong> Play Control</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/bottom-bar.html"><strong aria-hidden="true">5.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/player-sync.html"><strong aria-hidden="true">5.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/shader.html"><strong aria-hidden="true">5.6.2.</strong> Shader</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/settings.html"><strong aria-hidden="true">5.6.3.</strong> Settings</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/explaination.html"><strong aria-hidden="true">5.7.</strong> Explaination</a></li></ol></li></ol>';
+        // Set the current, active page, and reveal it if it's hidden
+        let current_page = document.location.href.toString().split("#")[0].split("?")[0];
+        if (current_page.endsWith("/")) {
+            current_page += "index.html";
+        }
+        var links = Array.prototype.slice.call(this.querySelectorAll("a"));
+        var l = links.length;
+        for (var i = 0; i < l; ++i) {
+            var link = links[i];
+            var href = link.getAttribute("href");
+            if (href && !href.startsWith("#") && !/^(?:[a-z+]+:)?\/\//.test(href)) {
+                link.href = path_to_root + href;
+            }
+            // The "index" page is supposed to alias the first chapter in the book.
+            if (link.href === current_page || (i === 0 && path_to_root === "" && current_page.endsWith("/index.html"))) {
+                link.classList.add("active");
+                var parent = link.parentElement;
+                if (parent && parent.classList.contains("chapter-item")) {
+                    parent.classList.add("expanded");
+                }
+                while (parent) {
+                    if (parent.tagName === "LI" && parent.previousElementSibling) {
+                        if (parent.previousElementSibling.classList.contains("chapter-item")) {
+                            parent.previousElementSibling.classList.add("expanded");
+                        }
+                    }
+                    parent = parent.parentElement;
+                }
+            }
+        }
+        // Track and set sidebar scroll position
+        this.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                sessionStorage.setItem('sidebar-scroll', this.scrollTop);
+            }
+        }, { passive: true });
+        var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+        sessionStorage.removeItem('sidebar-scroll');
+        if (sidebarScrollTop) {
+            // preserve sidebar scroll position when navigating via links within sidebar
+            this.scrollTop = sidebarScrollTop;
+        } else {
+            // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+            var activeSection = document.querySelector('#sidebar .active');
+            if (activeSection) {
+                activeSection.scrollIntoView({ block: 'center' });
+            }
+        }
+        // Toggle buttons
+        var sidebarAnchorToggles = document.querySelectorAll('#sidebar a.toggle');
+        function toggleSection(ev) {
+            ev.currentTarget.parentElement.classList.toggle('expanded');
+        }
+        Array.from(sidebarAnchorToggles).forEach(function (el) {
+            el.addEventListener('click', toggleSection);
+        });
+    }
+}
+window.customElements.define("mdbook-sidebar-scrollbox", MDBookSidebarScrollbox);

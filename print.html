@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -25,26 +25,41 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
-        <!-- Provide site root to javascript -->
-        <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
 
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -58,70 +73,51 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Online Manual</a></li><li class="chapter-item expanded affix "><li class="part-title">Cloud</li><li class="chapter-item expanded "><a href="cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/register.html"><strong aria-hidden="true">1.1.</strong> Register</a></li><li class="chapter-item expanded "><a href="cloud/login.html"><strong aria-hidden="true">1.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="cloud/forget-password.html"><strong aria-hidden="true">1.3.</strong> Forget Password</a></li><li class="chapter-item expanded "><a href="cloud/top-bar.html"><strong aria-hidden="true">1.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/account.html"><strong aria-hidden="true">1.4.1.</strong> Account</a></li><li class="chapter-item expanded "><a href="cloud/sign-out.html"><strong aria-hidden="true">1.4.2.</strong> Sign out</a></li></ol></li><li class="chapter-item expanded "><a href="cloud/side-bar.html"><strong aria-hidden="true">1.5.</strong> Side Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/dashboard.html"><strong aria-hidden="true">1.5.1.</strong> Dashboard</a></li><li class="chapter-item expanded "><a href="cloud/resources.html"><strong aria-hidden="true">1.5.2.</strong> Resources</a></li><li class="chapter-item expanded "><a href="cloud/users.html"><strong aria-hidden="true">1.5.3.</strong> Users</a></li><li class="chapter-item expanded "><a href="cloud/licenses.html"><strong aria-hidden="true">1.5.4.</strong> Licenses</a></li><li class="chapter-item expanded "><a href="cloud/produt-licenses.html"><strong aria-hidden="true">1.5.5.</strong> Product Licenses</a></li><li class="chapter-item expanded "><a href="cloud/clients.html"><strong aria-hidden="true">1.5.6.</strong> Clients</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">PLAYER HD</li><li class="chapter-item expanded "><a href="player/index.html"><strong aria-hidden="true">2.</strong> PLAYER HD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="player/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="player/active.html"><strong aria-hidden="true">2.2.</strong> Cloud Licensing</a></li><li class="chapter-item expanded "><a href="player/playlist-template.html"><strong aria-hidden="true">2.3.</strong> Playlist Template</a></li><li class="chapter-item expanded "><a href="player/config.html"><strong aria-hidden="true">2.4.</strong> Configuration</a></li><li class="chapter-item expanded "><a href="player/start-play.html"><strong aria-hidden="true">2.5.</strong> Start Play</a></li><li class="chapter-item expanded "><a href="player/quit-play.html"><strong aria-hidden="true">2.6.</strong> Quit Play</a></li><li class="chapter-item expanded "><a href="player/diagnosis.html"><strong aria-hidden="true">2.7.</strong> Diagnosis</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">SLAM DECK HANDBALL (iPadOS)</li><li class="chapter-item expanded "><a href="sport/index.html"><strong aria-hidden="true">3.</strong> HANDBALL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="sport/login.html"><strong aria-hidden="true">3.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="sport/home.html"><strong aria-hidden="true">3.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="sport/top-bar.html"><strong aria-hidden="true">3.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/status-view.html"><strong aria-hidden="true">3.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="sport/time-display.html"><strong aria-hidden="true">3.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="sport/audio-control.html"><strong aria-hidden="true">3.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="sport/fade-control.html"><strong aria-hidden="true">3.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="sport/brightness.html"><strong aria-hidden="true">3.4.5.</strong> Brightness</a></li><li class="chapter-item expanded "><a href="sport/brightnessExtra.html"><strong aria-hidden="true">3.4.6.</strong> RGB Brightness</a></li></ol></li><li class="chapter-item expanded "><a href="sport/content.html"><strong aria-hidden="true">3.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/playlist.html"><strong aria-hidden="true">3.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="sport/overview.html"><strong aria-hidden="true">3.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="sport/preview.html"><strong aria-hidden="true">3.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="sport/play-control.html"><strong aria-hidden="true">3.5.4.</strong> Play Control</a></li><li class="chapter-item expanded "><a href="sport/overlay.html"><strong aria-hidden="true">3.5.5.</strong> Overlay</a></li><li class="chapter-item expanded "><a href="sport/timeout.html"><strong aria-hidden="true">3.5.6.</strong> TIMEOUT</a></li></ol></li><li class="chapter-item expanded "><a href="sport/bottom-bar.html"><strong aria-hidden="true">3.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sport/player-sync.html"><strong aria-hidden="true">3.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="sport/settings.html"><strong aria-hidden="true">3.6.2.</strong> Settings</a></li></ol></li><li class="chapter-item expanded "><a href="sport/explaination.html"><strong aria-hidden="true">3.7.</strong> Explaination</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">SLAM DECK SOCCER (iPadOS)</li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/index.html"><strong aria-hidden="true">4.</strong> SOCCER</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/installation.html"><strong aria-hidden="true">4.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/login.html"><strong aria-hidden="true">4.2.</strong> Login</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/home.html"><strong aria-hidden="true">4.3.</strong> Home</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/top-bar.html"><strong aria-hidden="true">4.4.</strong> Top Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/status-view.html"><strong aria-hidden="true">4.4.1.</strong> Status View</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/time-display.html"><strong aria-hidden="true">4.4.2.</strong> Time Display</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/audio-control.html"><strong aria-hidden="true">4.4.3.</strong> Audio Control</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/fade-control.html"><strong aria-hidden="true">4.4.4.</strong> Fade Control</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/color-correction.html"><strong aria-hidden="true">4.4.5.</strong> Virtual AD (Color Correction)</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/brightness.html"><strong aria-hidden="true">4.4.6.</strong> Brightness</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/gain.html"><strong aria-hidden="true">4.4.7.</strong> Color (Current Gain)</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/content.html"><strong aria-hidden="true">4.5.</strong> Content</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/playlist.html"><strong aria-hidden="true">4.5.1.</strong> Playlist</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/overview.html"><strong aria-hidden="true">4.5.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/preview.html"><strong aria-hidden="true">4.5.3.</strong> Preview</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/play-control.html"><strong aria-hidden="true">4.5.4.</strong> Play Control</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/bottom-bar.html"><strong aria-hidden="true">4.6.</strong> Bottom Bar</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/player-sync.html"><strong aria-hidden="true">4.6.1.</strong> P-SYNC</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/shader.html"><strong aria-hidden="true">4.6.2.</strong> Shader</a></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/settings.html"><strong aria-hidden="true">4.6.3.</strong> Settings</a></li></ol></li><li class="chapter-item expanded "><a href="SLAM_DECK_SOCCER/explaination.html"><strong aria-hidden="true">4.7.</strong> Explaination</a></li></ol></li></ol>
-            </div>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
-
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -131,13 +127,14 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -154,7 +151,12 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -195,16 +197,230 @@
 <li>
 <p><strong><a href="SLAM_DECK_SOCCER/index.html">SLAM DECK SOCCER</a></strong> <code>SOCCER</code> app that can easily manage and remote control <code>PLAYER HD</code>.</p>
 </li>
+<li>
+<p><strong><a href="director-cor/README.html">DIRECTOR COR</a></strong> media scheduling and playlist management application for macOS 16+, with Assets, Playlist, Editor, and Inspector.</p>
+</li>
 </ul>
 <p>Try using the search function or browse the Help Topics to find the information you’re looking for.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="director-cor"><a class="header" href="#director-cor">DIRECTOR COR</a></h1>
+<p>Welcome to <strong>DIRECTOR COR</strong>, the ultimate media scheduling and playlist management application, designed exclusively for <strong>macOS 16 and above</strong>. This manual provides a comprehensive overview of the application's interface, breaking down each functional area to help you orchestrate your media seamlessly.</p>
+<p>The application interface is divided into several logical zones, enabling an intuitive workflow from file organization to final delivery. This layout, optimized for macOS 16's modern aesthetics and performance, is divided into five key regions: the <strong>Top Bar</strong>, the <strong>Assets</strong> panel, the <strong>Playlist</strong> panel, the central <strong>Editor</strong>, and the <strong>Inspector</strong>.</p>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p><img src="director-cor/overview.png" alt="DIRECTOR COR main interface" /></p>
+<div class="table-wrapper"><table><thead><tr><th>Region</th><th>Description</th></tr></thead><tbody>
+<tr><td><a href="director-cor/workflow.html">Workflow</a></td><td>From creating a project to publishing playlists to devices</td></tr>
+<tr><td><a href="director-cor/top-bar.html">Top Bar</a></td><td>Command center: window controls, Settings, project name, Publish</td></tr>
+<tr><td><a href="director-cor/assets.html">ASSETS</a></td><td>Media library: import, organize, and manage source files</td></tr>
+<tr><td><a href="director-cor/playlist.html">PLAYLIST</a></td><td>Master list of play sequences; select a playlist to edit its timeline</td></tr>
+<tr><td><a href="director-cor/editor.html">EDITOR</a></td><td>Timeline table: Start, Time, Content, Duration; drag-and-drop sequencing</td></tr>
+<tr><td><a href="director-cor/inspector.html">INSPECTOR</a></td><td>Context-aware properties: preview, playlist info, layout behavior, item properties</td></tr>
+</tbody></table>
+</div>
+<p>See the linked pages for detailed descriptions of each area.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="workflow-overview"><a class="header" href="#workflow-overview">Workflow Overview</a></h1>
+<p>This chapter describes a complete workflow from <strong>creating a new project</strong> to <strong>publishing to devices</strong>.<br />
+The example uses a <strong>Numbers spreadsheet template</strong> and multiple playback devices; you can adapt it to your own setup.</p>
+<p>High-level steps:</p>
+<ol>
+<li>Create a new DIRECTOR COR project</li>
+<li>Import a playlist from a Numbers template</li>
+<li>Select the Numbers template file in the system file picker</li>
+<li>Open the Device Settings window</li>
+<li>Discover and add devices on the local network</li>
+<li>Review and manage the device list</li>
+<li>Publish and monitor sync progress</li>
+<li>Confirm publish completion</li>
+</ol>
+<h1 id="step-1-create-a-new-project"><a class="header" href="#step-1-create-a-new-project">Step 1: Create a New Project</a></h1>
+<p><img src="director-cor/1.create_project.png" alt="Create Project" /></p>
+<ol>
+<li>From the top menu choose <code>File</code> → <code>New</code>, or use the keyboard shortcut to create a new document.</li>
+<li>After creation, the window title shows <code>Untitled</code>, and both the <code>Assets</code> and <code>Playlist</code> areas are empty.</li>
+<li>The <code>Preview / Layout</code> switch is already visible in the top-right corner, but there is no content to preview yet.</li>
+</ol>
+<h1 id="step-2-import-from-a-numbers-template"><a class="header" href="#step-2-import-from-a-numbers-template">Step 2: Import from a Numbers Template</a></h1>
+<p><img src="director-cor/2.import_menu.png" alt="Import Menu" /></p>
+<ol>
+<li>In the <code>Playlist</code> area at the bottom-left, click the <code>+</code> button.</li>
+<li>In the pop-up menu, choose <strong>Import…</strong>.</li>
+<li>The import feature can read an external template (such as a Numbers spreadsheet) and automatically generate playlist items and timeline entries.</li>
+</ol>
+<h3 id="if-prompted-grant-system-permissions"><a class="header" href="#if-prompted-grant-system-permissions">If prompted: grant system permissions</a></h3>
+<p>During the first import, macOS may prompt you to grant permissions so DIRECTOR COR can automate Numbers and control the UI:</p>
+<p><img src="director-cor/2-1.import-Accessibility-Access.png" alt="Accessibility Access prompt" /></p>
+<ul>
+<li>Click <strong>Open System Settings</strong> to grant Accessibility access.</li>
+</ul>
+<p><img src="director-cor/2-2.import-Automation.png" alt="Automation prompt" /></p>
+<ul>
+<li>Click <strong>Allow</strong> to permit DIRECTOR COR to control <code>Numbers.app</code>.</li>
+</ul>
+<p>Then, in System Settings → Privacy &amp; Security:</p>
+<p><img src="director-cor/2-3.Accessibility-Access.png" alt="Accessibility list" /></p>
+<ul>
+<li>Ensure <strong>DIRECTOR COR</strong> is enabled under Accessibility.</li>
+</ul>
+<p><img src="director-cor/2-4.Automation.png" alt="Automation list" /></p>
+<ul>
+<li>Under Automation, expand <strong>DIRECTOR COR</strong> and enable control of <strong>Numbers</strong> (and other required apps, if listed).</li>
+</ul>
+<h1 id="step-3-choose-the-numbers-template-file"><a class="header" href="#step-3-choose-the-numbers-template-file">Step 3: Choose the Numbers Template File</a></h1>
+<p><img src="director-cor/3.select_number_template.png" alt="Select Number Template" /></p>
+<ol>
+<li>In the system file picker, navigate to the folder that contains your template.</li>
+<li>Select the prepared Numbers template (for example <code>HCKL_Overlay</code>), and make sure its structure matches the DIRECTOR COR import format.</li>
+<li>Click <strong>Open</strong>. DIRECTOR COR parses the template and generates the corresponding playlist and Editor rows.</li>
+</ol>
+<h1 id="step-4-open-device-settings"><a class="header" href="#step-4-open-device-settings">Step 4: Open Device Settings</a></h1>
+<p><img src="director-cor/4.setting_devices.png" alt="Setting Devices" /></p>
+<ol>
+<li>After the import has created your playlist, open the Device Settings window (typically via the Settings icon or menu).</li>
+<li>In the dialog that appears, switch to the <strong>Devices</strong> tab.</li>
+<li>At the top, choose the current Player type (for example <code>SLAM DECK COR</code>) so that only relevant devices are shown.</li>
+</ol>
+<h1 id="step-5-discover-and-add-devices"><a class="header" href="#step-5-discover-and-add-devices">Step 5: Discover and Add Devices</a></h1>
+<p><img src="director-cor/5.adding_devices.png" alt="Adding Devices" /></p>
+<ol>
+<li>In the Devices window, click <strong>Add New Device</strong> to start scanning the local network.</li>
+<li>The <strong>Devices in Local Network</strong> sheet lists available players and control devices, including:
+<ul>
+<li>Device name (for example <code>slam.systems_sev16-1-Tahoe</code>)</li>
+<li>Device type (<code>Player</code> or <code>SLAM DECK COR</code>)</li>
+<li>IP address</li>
+</ul>
+</li>
+<li>Select the devices you want to use for this project, then click <strong>Add</strong> to add them to the device list.</li>
+</ol>
+<h1 id="step-6-manage-the-device-list"><a class="header" href="#step-6-manage-the-device-list">Step 6: Manage the Device List</a></h1>
+<p><img src="director-cor/6.devices_list.png" alt="Devices List" /></p>
+<ol>
+<li>Back in the main Devices window you can now see all added devices:
+<ul>
+<li>Each row shows the name, IP address, version, device type, and more.</li>
+<li>Use the checkboxes on the left to choose which devices should receive the current project.</li>
+</ul>
+</li>
+<li>The action buttons on the right can be used to:
+<ul>
+<li>Test connectivity</li>
+<li>Re-sync</li>
+<li>Remove the device from the list</li>
+</ul>
+</li>
+<li>When everything looks correct, click <strong>Done</strong> to return to the main window.</li>
+</ol>
+<h1 id="step-7-publish-and-monitor-sync-progress"><a class="header" href="#step-7-publish-and-monitor-sync-progress">Step 7: Publish and Monitor Sync Progress</a></h1>
+<p><img src="director-cor/7.publish_progressing.png" alt="Publish Progressing" /></p>
+<ol>
+<li>Click the <strong>Publish</strong> cloud icon in the top-right corner to start the publish process.</li>
+<li>The <strong>Syncing with Devices</strong> window shows sync progress for each device:
+<ul>
+<li>“Syncing…” indicates that data is being transferred or processed</li>
+<li>A progress bar shows the current percentage</li>
+</ul>
+</li>
+<li>While publishing, keep the network connection stable and avoid closing the app or target devices.</li>
+</ol>
+<h1 id="step-8-publishing-complete"><a class="header" href="#step-8-publishing-complete">Step 8: Publishing Complete</a></h1>
+<p><img src="director-cor/8.publish_finish.png" alt="Publish Finish" /></p>
+<ol>
+<li>When the status for all devices changes to <strong>Completed</strong>, the top of the window shows <strong>Sync completed for all devices</strong>.</li>
+<li>At this point, the playlist has been successfully distributed to all selected Player and SLAM DECK COR devices.</li>
+<li>Click <strong>Close</strong> to dismiss the dialog, then verify playback on site or in your test environment.</li>
+</ol>
+<p>With these steps, you complete the full DIRECTOR COR workflow: create a project, import a template, connect devices, and publish your playlists.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="top-bar"><a class="header" href="#top-bar">Top Bar</a></h1>
+<p>The <strong>Top Bar</strong> is your command center, providing global navigation and control. It contains essential system and project-level functions such as project identification and publishing.</p>
+<h2 id="components"><a class="header" href="#components">Components</a></h2>
+<ul>
+<li>
+<p><strong>Traffic Lights (Not Labeled):</strong> Standard macOS window controls for Close, Minimize, and Fullscreen.</p>
+</li>
+<li>
+<p><strong>Settings Icon (⚙️):</strong> Positioned next to the traffic lights, clicking this gear icon opens the application's global preference pane. Labeled as <strong>Settings</strong>, this is where you configure application-wide parameters, user accounts, and device connections.</p>
+</li>
+<li>
+<p><strong>Project Name:</strong> Displayed next to the Settings icon, this shows the current project's title. The label <strong>Project Name</strong> clarifies its purpose, allowing you to quickly identify your workspace.</p>
+</li>
+<li>
+<p><strong>Publish Button (Cloud with Arrow):</strong> Located on the far right, this icon, labeled <strong>Publish</strong>, is a crucial final step. It initiates the process of rendering, compiling, or uploading your completed playlist and associated media to a destination server or device. This button is your "live" switch.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="assets-panel"><a class="header" href="#assets-panel">ASSETS Panel</a></h1>
+<p>The green-tinted area on the left, labeled <strong>ASSETS</strong>, is your media library. This panel acts as a repository for all source files that can be used in your playlists. It displays a list of file names, often including metadata and file types. You can import new files, organize them into folders (folders are shown with disclosure triangles, e.g. "Europepark" and "26_MVM..."), and manage your file inventory from this view.</p>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<p>To add media to a playlist, you can simply <strong>drag a file or a folder</strong> directly from the <strong>ASSETS</strong> list into the central <strong>Editor</strong> table.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="playlist-panel"><a class="header" href="#playlist-panel">PLAYLIST Panel</a></h1>
+<p>The purple-tinted area below the ASSETS panel, labeled <strong>PLAYLIST</strong>, displays all the play sequences you have created within the current project. This is a master list of all playlists. One playlist is always selected, indicated by a dark blue background (e.g. "PLAY TIME" when selected). Other created lists such as "Animation Player," "Best Player," "Matrix," etc., are visible.</p>
+<h2 id="usage-1"><a class="header" href="#usage-1">Usage</a></h2>
+<ul>
+<li>
+<p>Selecting a different playlist from this list will immediately populate the central <strong>Editor</strong> with that playlist's specific timeline.</p>
+</li>
+<li>
+<p>The list supports standard macOS conventions:</p>
+<ul>
+<li><strong>Single click</strong> to select</li>
+<li><strong>Double click</strong> to rename</li>
+<li>Use the <strong>+</strong> icon at the bottom left to create new playlists, or delete existing ones</li>
+</ul>
+</li>
+<li>
+<p>The bottom search bar lets you quickly filter through a large number of playlists.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="editor"><a class="header" href="#editor">EDITOR</a></h1>
+<p>The yellow-tinted central area, labeled <strong>EDITOR</strong>, is where you construct and manage the selected playlist's timeline. This is a spreadsheet-style table with the following columns:</p>
+<div class="table-wrapper"><table><thead><tr><th>Column</th><th>Description</th></tr></thead><tbody>
+<tr><td><strong>Start</strong></td><td>The exact time in the playlist when an item is scheduled to begin playing.</td></tr>
+<tr><td><strong>Time</strong></td><td>Shows the precise moment or time value related to playback for each item. <em>This column may show the start time for the next item.</em></td></tr>
+<tr><td><strong>Content</strong></td><td>The name of the media file or command associated with that schedule block.</td></tr>
+<tr><td><strong>Duration</strong></td><td>The total length of time that specific item will play.</td></tr>
+</tbody></table>
+</div>
+<h2 id="interactivity"><a class="header" href="#interactivity">Interactivity</a></h2>
+<p>The table is highly interactive:</p>
+<ul>
+<li>
+<p><strong>Drag and drop</strong> media items from the <strong>ASSETS</strong> panel directly into the <strong>EDITOR</strong> to add them to the sequence.</p>
+</li>
+<li>
+<p>Once added, you can <strong>click and drag rows</strong> to rearrange the playback order.</p>
+</li>
+<li>
+<p>The interface automatically recalculates the start times and durations for all preceding and subsequent items to maintain a continuous, seamless playback stream.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inspector"><a class="header" href="#inspector">INSPECTOR</a></h1>
+<p>The red-tinted panel on the far right, labeled <strong>INSPECTOR</strong>, provides detailed context-aware information and properties for the currently selected item or the overall selected playlist. It changes dynamically based on your interaction.</p>
+<h2 id="preview-window"><a class="header" href="#preview-window">Preview Window</a></h2>
+<p>At the top of the <strong>INSPECTOR</strong> is a live preview window. When an item in the central <strong>Editor</strong> is selected, this window shows a frame from that media file or a small thumbnail of it. It can also display a live feed of the playlist's current time (e.g. a "gamma print" test screen).</p>
+<h2 id="playlist-info-and-layout-mode"><a class="header" href="#playlist-info-and-layout-mode">Playlist Info and Layout Mode</a></h2>
+<p>When the overall playlist is selected (or nothing specific), the <strong>Playlist Properties</strong> and <strong>Playlist Info</strong> sections provide an overview. In <strong>Layout</strong> mode, this panel also works together with the main preview/layout switch to show how items are arranged and will appear when played:</p>
+<ul>
+<li><strong>Playlist Properties:</strong> Allows you to change the playlist's internal name (e.g. to "Animation Player").</li>
+<li><strong>Playlist Info:</strong> Displays a summary including:
+<ul>
+<li>Total number of items (e.g. 31)</li>
+<li>Total duration of the entire playlist (e.g. 00:10:20)</li>
+<li>Date and time it was last modified (e.g. 6/3/2026, 5:24 PM)</li>
+</ul>
+</li>
+</ul>
+<h2 id="item-properties"><a class="header" href="#item-properties">Item Properties</a></h2>
+<p>When a single item is selected in the <strong>Editor</strong>, the bottom portion of the <strong>INSPECTOR</strong> updates to show detailed info for that content:</p>
+<ul>
+<li><strong>Name:</strong> The file name of the selected item (e.g. "12_Gammaprint.mp4").</li>
+<li><strong>File Path:</strong> The absolute system path on your macOS 16 computer where the source media file is located (e.g. <code>/Users/watermoon/Downloads/Test/Mar6_Media/12_Gammaprint.mp4</code>). This is essential for verifying linked media or identifying missing files.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cloud"><a class="header" href="#cloud">Cloud</a></h1>
 <p>Cloud is the online management tool for the SLAM SYSTEMS software suite.</p>
 <p>Please Note that an internet connection is required for cloud.slam.systems on each computer to activate your application.</p>
-<p>When you register for a new account you will get an email from noreply@slam.systems to verify your email address and add you to your Organization/Company. Click on the link provided to confirm your log in credentials. </p>
+<p>When you register for a new account you will get an email from noreply@slam.systems to verify your email address and add you to your Organization/Company. Click on the link provided to confirm your log in credentials.</p>
 <p>We will contact you according to your registration information as soon as possible, once confirmed, your account will be activated.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="register"><a class="header" href="#register">Register</a></h1>
 <p>Please go to <a href="https://cloud.slam.systems/register">https://cloud.slam.systems/register</a>, read the <code>FIRST STEP</code> carefully then contact us.</p>
-<p>Organization accounts can add by Organization manager directly. </p>
+<p>Organization accounts can add by Organization manager directly.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="login"><a class="header" href="#login">Login</a></h1>
 <p>Login with your Email and password.</p>
 <p>If you forgot your password, then click the forgot your password link below the password field. Please see <a href="cloud/forget-password.html">1.3 Forget password</a>.</p>
@@ -212,8 +428,8 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="forget-password"><a class="header" href="#forget-password">Forget Password</a></h1>
 <p>You can reset your password by your register Email.</p>
 <p>If the email is valid, you will receive an email to reset your password, click the link in the email to reset your password.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="top-bar"><a class="header" href="#top-bar">Top Bar</a></h1>
-<p>In the top bar, logged-in user display on the top-right. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="top-bar-1"><a class="header" href="#top-bar-1">Top Bar</a></h1>
+<p>In the top bar, logged-in user display on the top-right.</p>
 <p>Click user account will show a pop up menu including Account and Sign out.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="account"><a class="header" href="#account">Account</a></h1>
 <p>Shows your account information.</p>
@@ -273,7 +489,7 @@ Click <strong>Create</strong> button after filling in the form.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="product-licenses"><a class="header" href="#product-licenses">Product Licenses</a></h1>
 <p>An overview of the software products that are connected to your Organization.</p>
 <p>Each of product license including its product, version, license, last updated, status and name.</p>
-<p>Organization manager can <strong>reject</strong>, <strong>accept</strong> license requests in actions menu. </p>
+<p>Organization manager can <strong>reject</strong>, <strong>accept</strong> license requests in actions menu.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="clients"><a class="header" href="#clients">Clients</a></h1>
 <p>Only the <code>Reseller Organization Admin</code> role can access this.</p>
 <p>Overview of all Clients that under your Organization.</p>
@@ -294,7 +510,7 @@ You can <strong>Add Client</strong> by sending the invite link to your client.</
 <li><strong>SLAM key</strong>: https://cloud.slam.systems</li>
 </ul>
 <p><img src="player/active-waitting.jpg" alt="Active wait" /></p>
-<p>You can click &quot;Refresh in xx seconds...&quot; once organization's manager has ACCEPT this license to this player.</p>
+<p>You can click "Refresh in xx seconds..." once organization's manager has ACCEPT this license to this player.</p>
 <p><img src="player/active-approved.jpg" alt="Active approved" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="playlist-template"><a class="header" href="#playlist-template">Playlist Template</a></h1>
 <p>On the Menu, Help --&gt; Playlist Template</p>
@@ -316,7 +532,7 @@ You can <strong>Add Client</strong> by sending the invite link to your client.</
 <br/>                For more  detail of error using <a href="player/diagnosis.html">Diagnosis</a> to correct your playlist content.</p>
 </li>
 <li>
-<p><strong>Show in Finder</strong>. Popup finder of clip folder. </p>
+<p><strong>Show in Finder</strong>. Popup finder of clip folder.</p>
 </li>
 </ul>
 <br/>
@@ -351,7 +567,7 @@ maybe more than one error in playlist, then correct the content in origin playli
 <br/></p>
 <p><img src="player/DG-Menu.jpg" alt="Entrance" /></p>
 <ul>
-<li>Select Menu 'Help'-&gt;Diagnosis 
+<li>Select Menu 'Help'-&gt;Diagnosis
 <br/><br/><br/><br/><br/></li>
 </ul>
 <p><img src="player/DG-.jpg" alt="Screenshot" />
@@ -398,7 +614,7 @@ Here is list reason of invalid content:
 <p>To install <strong>HANDBALL PRO</strong> app on your iPadOS devices, Requires an iPad running at least iPadOS 16 and oboved.</p>
 <p>Using <strong>App Store</strong> to install.</p>
 <ul>
-<li>Search keyword <em>&quot;HANDBALL PRO&quot;</em>.</li>
+<li>Search keyword <em>"HANDBALL PRO"</em>.</li>
 <li>Click dowload icon below.</li>
 <li>Scan app's QR code.</li>
 </ul>
@@ -417,7 +633,7 @@ Here is list reason of invalid content:
 <p><strong>REMEMBER ME</strong>. Save your password to system keytrain for safety.</p>
 </li>
 </ul>
-<p>Tips: </p>
+<p>Tips:</p>
 <ul>
 <li><em>Only the activate account could login.</em></li>
 <li><em>If you don't have an account, Please see <a href="sport/../cloud/register.html">1.1 Register</a>.</em></li>
@@ -438,7 +654,7 @@ Here is list reason of invalid content:
 <li><strong>Content</strong>
 <ul>
 <li><code>Playlist</code>: Playlist of connected players.</li>
-<li><code>Overview</code>: Overview of one playlist. </li>
+<li><code>Overview</code>: Overview of one playlist.</li>
 <li><code>Preview</code>: Preview of one playlist.</li>
 <li><code>Play Control</code>: Player control, Previous, Next, Play and Pause.</li>
 </ul>
@@ -447,11 +663,11 @@ Here is list reason of invalid content:
 <ul>
 <li><code>C/P Time</code>: Toogle button switch Time Display between clip Time and Playlist Time.</li>
 <li><code>P-SYNC</code>: Player Sync, setup players connection and sync.</li>
-<li><code>SETTINGS</code>: Setting Time Display counting and Sign Out. </li>
+<li><code>SETTINGS</code>: Setting Time Display counting and Sign Out.</li>
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="top-bar-1"><a class="header" href="#top-bar-1">Top Bar</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="top-bar-2"><a class="header" href="#top-bar-2">Top Bar</a></h1>
 <p>Including Status View, Time Display and function control views.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="status-view"><a class="header" href="#status-view">Status View</a></h1>
 <ul>
@@ -462,13 +678,13 @@ Here is list reason of invalid content:
 <p><strong>MEDIA PLAYER</strong>: Showing the connection status CONNECTED or DISCONNECT.</p>
 </li>
 <li>
-<p><strong>RUNNING PAGE</strong>: Shows the current runnig page name. </p>
+<p><strong>RUNNING PAGE</strong>: Shows the current runnig page name.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="time-display"><a class="header" href="#time-display">Time Display</a></h1>
 <p>Time Display format is HH:MM:SS.</p>
 <p>A progress bar of current clip or playlist below the Time, See <strong>C/P TIME</strong> button in <a href="sport/home.html">Bottom Bar</a>.</p>
-<p>To setting counting up/down time please see <a href="sport/setting.html">Settings</a>. </p>
+<p>To setting counting up/down time please see <a href="sport/setting.html">Settings</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="audio-control"><a class="header" href="#audio-control">Audio Control</a></h1>
 <p>Audio Control on the Top Bar shows the current settings of audio, for display only.</p>
 <p><img src="sport/audio_control.png" alt="Audio Control" /></p>
@@ -494,7 +710,7 @@ Here is list reason of invalid content:
 <p>Make sure LED screen is Power On and signal line(using Ethernet Line) is connect between *Novastar Controller and LED screen, otherwise the Brightness control panel will be empty.</p>
 </li>
 <li>
-<p>For more detail please contact support team. </p>
+<p>For more detail please contact support team.</p>
 </li>
 </ol>
 <h3 id="--novastar-is-a-trademark-belong-xian-novastar-tech-co-ltd"><a class="header" href="#--novastar-is-a-trademark-belong-xian-novastar-tech-co-ltd">*  Novastar is a trademark belong Xi'an NovaStar Tech Co., Ltd.</a></h3>
@@ -514,7 +730,7 @@ Here is list reason of invalid content:
 <p>RESET value is Red:50 Green:50 Blue:50</p>
 </li>
 <li>
-<p>For more detail please contact support team. </p>
+<p>For more detail please contact support team.</p>
 </li>
 </ol>
 <h3 id="--novastar-is-a-trademark-belong-xian-novastar-tech-co-ltd-1"><a class="header" href="#--novastar-is-a-trademark-belong-xian-novastar-tech-co-ltd-1">*  Novastar is a trademark belong Xi'an NovaStar Tech Co., Ltd.</a></h3>
@@ -525,7 +741,7 @@ Here is list reason of invalid content:
 <p>If connected to the players, the playlist will be listed here.</p>
 <p>If not connect yet, please go to <a href="sport/player-sync.html">P-SYNC</a>.</p>
 <p>Click one of the playlist go to <a href="sport/overview.html">Overview</a> page.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overview-1"><a class="header" href="#overview-1">Overview</a></h1>
 <p>If connected to the players, the clips of selected playlist will be listed here.</p>
 <p><img src="sport/overview.png" alt="Overview" /></p>
 <p>This layout and contents are same as the Number template.</p>
@@ -542,7 +758,7 @@ Here is list reason of invalid content:
 <p><strong>NOTE</strong>: It is strongly recommended to enter PRESET mode only during debugging phase.</p>
 <p><img src="sport/preset_mode_alert.png" alt="PRESET MODE" /></p>
 <p>During preset mode, click on a clip to start configuring its preset.</p>
-<p>Each adjustment is saved immediately after the change. </p>
+<p>Each adjustment is saved immediately after the change.</p>
 <p>The selected clip will loop for easy debugging.</p>
 <p>If the clip has a preset, it will appear with magenta highlight border in the Overview list (only during the preset mode).</p>
 <p><img src="sport/preset_list.png" alt="PRESET LIST" /></p>
@@ -594,10 +810,10 @@ Here is list reason of invalid content:
 <img src="sport/Timeout-TeaserGuest.jpg" alt="TeaserGuest2" /></p>
 <ol>
 <li>
-<p>Playlist <strong>MUST</strong> contain timeout list and it's content, 
+<p>Playlist <strong>MUST</strong> contain timeout list and it's content,
 otherwise only teaser content overlay in playing content.</p>
 <p><img src="sport/Timeout-TeaserPlaylist.jpg" alt="Teaser" /></p>
-<p><strong>Sample of timeout list</strong> </p>
+<p><strong>Sample of timeout list</strong></p>
 </li>
 </ol>
 <p><img src="sport/Timeout-Playlist.jpg" alt="Timeout" /></p>
@@ -611,7 +827,7 @@ otherwise only teaser content overlay in playing content.</p>
 <p>home team teaser content is overlay in normal playing clip.
 <img src="sport/Timeout-TeaserHome.jpg" alt="Step3" /></p>
 <p><strong>Guest team request timeout</strong></p>
-<p>press guest Home team buzzer 
+<p>press guest Home team buzzer
 <img src="sport/Timeout-PressGuest.jpg" alt="Step2" /></p>
 <p>Guest teaser content is overlay in normal playing clip.</p>
 <p><img src="sport/Timeout-TeaserGuest.jpg" alt="Step3" /></p>
@@ -619,7 +835,7 @@ otherwise only teaser content overlay in playing content.</p>
 <p>Just simply tap  thumbnail and countdown start running,
 once countdown running, it will stop automatically when count to ZERO.</p>
 <p><strong>Switch timeout clip</strong></p>
-<p>Simply tap another thumbnail, when countdown run to zero </p>
+<p>Simply tap another thumbnail, when countdown run to zero</p>
 <p>timeout will stop and teaser content and timeout clip will disappear.</p>
 <p>and back to normal playing content.</p>
 <p><strong>Setting countdown's seconds</strong></p>
@@ -639,7 +855,7 @@ once countdown running, it will stop automatically when count to ZERO.</p>
 <li>Check the circle box to select Players;</li>
 <li>Click <strong>SYNC</strong> button to start connection and synchornise.</li>
 </ol>
-<p>The PROCESS bar showing the sync progress, disappears after sync is complete. </p>
+<p>The PROCESS bar showing the sync progress, disappears after sync is complete.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="settings"><a class="header" href="#settings">Settings</a></h1>
 <p>Setting Time Display counting and Sign Out.</p>
 <p>Count Up/Down for Playlist Time and Clip Time can be set separately.</p>
@@ -661,7 +877,7 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <p>To install <strong>Sport</strong> app on your iPadOS devices, Requires an iPad running at least iPadOS 15 and oboved.</p>
 <p>Using <strong>App Store</strong> to install.</p>
 <ul>
-<li>Search keyword <em>&quot;SLAM DECK LIVE&quot;</em>.</li>
+<li>Search keyword <em>"SLAM DECK LIVE"</em>.</li>
 <li>Click dowload icon below.</li>
 <li>Scan app's QR code.</li>
 </ul>
@@ -680,7 +896,7 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <p><strong>REMEMBER ME</strong>. Save your password to system keytrain for safety.</p>
 </li>
 </ul>
-<p>Tips: </p>
+<p>Tips:</p>
 <ul>
 <li><em>Only the activate account could login.</em></li>
 <li><em>If you don't have an account, Please see <a href="SLAM_DECK_SOCCER/../cloud/register.html">1.1 Register</a>.</em></li>
@@ -701,7 +917,7 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <li><strong>Content</strong>
 <ul>
 <li><code>Playlist</code>: Playlist of connected players.</li>
-<li><code>Overview</code>: Overview of one playlist. </li>
+<li><code>Overview</code>: Overview of one playlist.</li>
 <li><code>Preview</code>: Preview of one playlist.</li>
 <li><code>Play Control</code>: Player control, Previous, Next, Play and Pause.</li>
 </ul>
@@ -711,11 +927,11 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <li><code>SHADER</code>: Adjusting shader range and brightness, load and save configurations.</li>
 <li><code>C/P Time</code>: Toogle button switch Time Display between clip Time and Playlist Time.</li>
 <li><code>P-SYNC</code>: Player Sync, setup players connection and sync.</li>
-<li><code>SETTINGS</code>: Setting Time Display counting and Sign Out. </li>
+<li><code>SETTINGS</code>: Setting Time Display counting and Sign Out.</li>
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="top-bar-2"><a class="header" href="#top-bar-2">Top Bar</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="top-bar-3"><a class="header" href="#top-bar-3">Top Bar</a></h1>
 <p>Including Status View, Time Display and function control views.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="status-view-1"><a class="header" href="#status-view-1">Status View</a></h1>
 <ul>
@@ -726,13 +942,13 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <p><strong>MEDIA PLAYER</strong>: Showing the connection status CONNECTED or DISCONNECT.</p>
 </li>
 <li>
-<p><strong>RUNNING PAGE</strong>: Shows the current runnig page name. </p>
+<p><strong>RUNNING PAGE</strong>: Shows the current runnig page name.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="time-display-1"><a class="header" href="#time-display-1">Time Display</a></h1>
 <p>Time Display format is HH:MM:SS.</p>
 <p>A progress bar of current clip or playlist below the Time, See <strong>C/P TIME</strong> button in <a href="SLAM_DECK_SOCCER/home.html">Bottom Bar</a>.</p>
-<p>To setting counting up/down time please see <a href="SLAM_DECK_SOCCER/setting.html">Settings</a>. </p>
+<p>To setting counting up/down time please see <a href="SLAM_DECK_SOCCER/setting.html">Settings</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="audio-control-1"><a class="header" href="#audio-control-1">Audio Control</a></h1>
 <p>Audio Control on the Top Bar shows the current settings of audio, for display only.</p>
 <p><img src="SLAM_DECK_SOCCER/audio_control.png" alt="Audio Control" /></p>
@@ -768,7 +984,7 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="color"><a class="header" href="#color">Color</a></h1>
 <ol>
 <li>This feature may have to upgrade the player's version(Available since 2023.04).</li>
-<li>This feature available for specific models (eg: Nemezes 10AC) and make sure USB cable connected between MAC and NOVAStart controller. When hardware support, control panel will show in top right of SPORT.app ,otherwise is blank. </li>
+<li>This feature available for specific models (eg: Nemezes 10AC) and make sure USB cable connected between MAC and NOVAStart controller. When hardware support, control panel will show in top right of SPORT.app ,otherwise is blank.</li>
 <li>Drag then rise up finger will apply to whole screen.</li>
 <li>If Synchronize is on, all the gain value is same as any slider you drag.</li>
 <li>RESET value is not a fix number,it depend on specific LED models.</li>
@@ -784,7 +1000,7 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <p>If connected to the players, the playlist will be listed here.</p>
 <p>If not connect yet, please go to <a href="SLAM_DECK_SOCCER/player-sync.html">P-SYNC</a>.</p>
 <p>Click one of the playlist go to <a href="SLAM_DECK_SOCCER/overview.html">Overview</a> page.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="overview-1"><a class="header" href="#overview-1">Overview</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overview-2"><a class="header" href="#overview-2">Overview</a></h1>
 <p>If connected to the players, the clips of selected playlist will be listed here.</p>
 <p><img src="SLAM_DECK_SOCCER/overview.png" alt="Overview" /></p>
 <p>This layout and contents are same as the Number template.</p>
@@ -801,7 +1017,7 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <p><strong>NOTE</strong>: It is strongly recommended to enter PRESET mode only during debugging phase.</p>
 <p><img src="SLAM_DECK_SOCCER/preset_mode_alert.png" alt="PRESET MODE" /></p>
 <p>During preset mode, click on a clip to start configuring its preset.</p>
-<p>Each adjustment is saved immediately after the change. </p>
+<p>Each adjustment is saved immediately after the change.</p>
 <p>The selected clip will loop for easy debugging.</p>
 <p>If the clip has a preset, it will appear with magenta highlight border in the Overview list (only during the preset mode).</p>
 <p><img src="SLAM_DECK_SOCCER/preset_list.png" alt="PRESET LIST" /></p>
@@ -823,7 +1039,7 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <li>Check the circle box to select Players;</li>
 <li>Click <strong>SYNC</strong> button to start connection and synchornise.</li>
 </ol>
-<p>The PROCESS bar showing the sync progress, disappears after sync is complete. </p>
+<p>The PROCESS bar showing the sync progress, disappears after sync is complete.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="shader"><a class="header" href="#shader">SHADER</a></h1>
 <p><img src="SLAM_DECK_SOCCER/shader-reality.jpg" alt="Overview" /></p>
 <ol>
@@ -837,14 +1053,14 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
 <br/></p>
 </li>
 <li>
-<p>Config Panel 
+<p>Config Panel
 <img src="SLAM_DECK_SOCCER/shader-adjusting.PNG" alt="Adjusting" />
 <br/>
 <br/>
 <br/></p>
 </li>
 <li>
-<p>Enable/Disable SHADER layout or transparent condition 
+<p>Enable/Disable SHADER layout or transparent condition
 <img src="SLAM_DECK_SOCCER/shader-config.PNG" alt="Adjusting" />
 <br/>
 <br/>
@@ -911,6 +1127,7 @@ SPORT will show the latest information from Main PLYAER. <br/><br/></li>
             window.setTimeout(window.print, 100);
         });
         </script>
+
 
     </div>
     </body>
