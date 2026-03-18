@@ -2,6 +2,16 @@
 
 [Online Manual](README.md)
 
+# DIRECTOR COR (macOS)
+
+- [DIRECTOR COR](director-cor/README.md)
+    - [Workflow](director-cor/workflow.md)
+    - [Top Bar](director-cor/top-bar.md)
+    - [ASSETS Panel](director-cor/assets.md)
+    - [PLAYLIST Panel](director-cor/playlist.md)
+    - [EDITOR](director-cor/editor.md)
+    - [INSPECTOR](director-cor/inspector.md)
+
 # Cloud
 
 - [Cloud](cloud/README.md)
