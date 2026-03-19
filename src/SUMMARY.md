@@ -40,11 +40,11 @@
     - [Diagnosis](player/diagnosis.md)
 
 # SLAM PLAY COR-HD
-- [PLAYER HD](player-cor/README.md)
-- [Installation](player-cor/installation.md)
-- [Configuration](player-cor/config.md)
-- [Start Play](player-cor/start-play.md)
-- [Quit Play](player-cor/quit-play.md)
+- [Requirement](player-cor/README.md)
+    - [Installation](player-cor/installation.md)
+    - [Configuration](player-cor/config.md)
+    - [Start Play](player-cor/start-play.md)
+    - [Quit Play](player-cor/quit-play.md)
 
 # SLAM DECK HANDBALL (iPadOS)
 - [HANDBALL](sport/README.md)
