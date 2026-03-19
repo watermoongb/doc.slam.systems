@@ -20,7 +20,8 @@
 <br/>
 <br/>
 
-**Allow local Network Perssion**
+**Allow local Network Permission when prompt**
+
 ![Permission](config-Permission.jpg)
 
 <br/>
