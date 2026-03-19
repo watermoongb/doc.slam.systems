@@ -29,7 +29,7 @@
         - [Product Licenses](cloud/produt-licenses.md)
         - [Clients](cloud/clients.md)
 
-# PLAYER HD
+# SLAM PLAY HD
 - [PLAYER HD](player/README.md)
     - [Installation](player/installation.md)
     - [Cloud Licensing](player/active.md)
@@ -38,6 +38,13 @@
     - [Start Play](player/start-play.md)
     - [Quit Play](player/quit-play.md)
     - [Diagnosis](player/diagnosis.md)
+
+# SLAM PLAY COR-HD
+- [PLAYER HD](player-cor/README.md)
+- [Installation](player-cor/installation.md)
+- [Configuration](player-cor/config.md)
+- [Start Play](player-cor/start-play.md)
+- [Quit Play](player-cor/quit-play.md)
 
 # SLAM DECK HANDBALL (iPadOS)
 - [HANDBALL](sport/README.md)
