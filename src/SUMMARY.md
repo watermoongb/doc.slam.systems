@@ -30,7 +30,7 @@
         - [Clients](cloud/clients.md)
 
 # SLAM PLAY HD
-- [PLAYER HD](player/README.md)
+- [COR-HD](player/README.md)
     - [Installation](player/installation.md)
     - [Cloud Licensing](player/active.md)
     - [Playlist Template](player/playlist-template.md)
