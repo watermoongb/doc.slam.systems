@@ -1,4 +1,4 @@
 # Start Play
-![StarPlayer](config.jpg)
+![StarPlayer](Home.jpg)
 
-Once player receive valid content from DIRECTOR COR,   start play button will be enabled  then click it to enter fullscreen for ready .
+Once player receive valid content from DIRECTOR COR,   start play button(top right) will be enabled  then click it to enter fullscreen for ready .
