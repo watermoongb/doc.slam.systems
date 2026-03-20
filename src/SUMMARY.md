@@ -40,7 +40,7 @@
     - [Diagnosis](player/diagnosis.md)
 
 # SLAM PLAY COR-HD
-- [Requirement](player-cor/README.md)
+- [COR HD](player-cor/README.md)
     - [Installation](player-cor/installation.md)
     - [Configuration](player-cor/config.md)
     - [Start Play](player-cor/start-play.md)
