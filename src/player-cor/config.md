@@ -44,7 +44,7 @@
 <br/>
 <br/>
 <br/>
-**IGMP setting in switch or Router, here is reference example of ASUS RT-BE88U router, subject to the network equipment you actually use.**
+**IGMP setting in switch or Router, here is reference example of ASUS RT-BE88U router, subject to the network equipment you actually use**
 ![IGMP](IGMP.jpg)
 
 
