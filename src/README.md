@@ -17,6 +17,6 @@ The suite consists of the following applications:
 
 * **[DIRECTOR COR](director-cor/)** media scheduling and playlist management application for macOS 16+, with Assets, Playlist, Editor, and Inspector.
 
-* **[SLAM PLAY COR-HD](player-cor/README.md)** player for playing playlist from DIRECTOR COR and remote control app in iPad is `SOCCOR COR`.
+* **[SLAM PLAY COR-HD](player-cor/)** player for playing playlist from DIRECTOR COR and remote control app in iPad is `SOCCOR COR`.
 
 Try using the search function or browse the Help Topics to find the information you’re looking for.
