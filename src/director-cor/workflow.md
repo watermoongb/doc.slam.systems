@@ -3,6 +3,19 @@
 This chapter describes a complete workflow from **creating a new project** to **publishing to devices**.  
 The example uses a **Numbers spreadsheet template** and multiple playback devices; you can adapt it to your own setup.
 
+## Installation and Requirements
+
+Before starting the workflow, complete the installation and environment setup:
+
+1. Sign in to the SLAM Cloud portal: [cloud.slam.systems](https://cloud.slam.systems/).  
+2. Go to the **Resources** section and download the latest DIRECTOR COR package.  
+3. Install DIRECTOR COR on your Mac.
+
+Runtime system requirements:
+
+- **macOS 16**  
+- **Numbers.app installed** (required for template import and automation)
+
 High-level steps:
 
 1. Create a new DIRECTOR COR project  

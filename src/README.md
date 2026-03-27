@@ -15,7 +15,7 @@ The suite consists of the following applications:
 
 * **[SLAM DECK SOCCER](SLAM_DECK_SOCCER/index.md)** `SOCCER` app that can easily manage and remote control `PLAYER HD`.
 
-* **[DIRECTOR COR](director-cor/README.md)** media scheduling and playlist management application for macOS 16+, with Assets, Playlist, Editor, and Inspector.
+* **[DIRECTOR COR](director-cor/)** media scheduling and playlist management application for macOS 16+, with Assets, Playlist, Editor, and Inspector.
 
 * **[SLAM PLAY COR-HD](player-cor/README.md)** player for playing playlist from DIRECTOR COR and remote control app in iPad is `SOCCOR COR`.
 
