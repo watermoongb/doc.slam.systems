@@ -7,7 +7,7 @@ The example uses a **Numbers spreadsheet template** and multiple playback device
 
 Before starting the workflow, complete the installation and environment setup:
 
-1. Sign in to the SLAM Cloud portal: [cloud.slam.systems](https://cloud.slam.systems/).  
+1. Sign in to the SLAM Cloud portal: <a href="https://cloud.slam.systems/" target="_blank" rel="noopener noreferrer">cloud.slam.systems</a>.  
 2. Go to the **Resources** section and download the latest DIRECTOR COR package.  
 3. Install DIRECTOR COR on your Mac.
 
