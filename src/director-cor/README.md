@@ -1,6 +1,6 @@
 # DIRECTOR COR
 
-Welcome to **DIRECTOR COR**, the ultimate media scheduling and playlist management application, designed exclusively for **macOS 16 and above**. This manual provides a comprehensive overview of the application's interface, breaking down each functional area to help you orchestrate your media seamlessly.
+**DIRECTOR COR** is a macOS app for managing media libraries, editing playlist timelines, and publishing schedules to [SLAM PLAY COR-HD](../player-cor/) on the network. It targets **macOS 16 and later** and, for typical workflows, works with **Numbers** to import playlist data from spreadsheet templates. This manual summarizes the main window and links to deeper topics for each part of the interface.
 
 The application interface is divided into several logical zones, enabling an intuitive workflow from file organization to final delivery. This layout, optimized for macOS 16's modern aesthetics and performance, is divided into five key regions: the **Top Bar**, the **Assets** panel, the **Playlist** panel, the central **Editor**, and the **Inspector**.
 
