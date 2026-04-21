@@ -3,6 +3,26 @@
 This chapter describes a complete workflow from **creating a new project** to **publishing to devices**.  
 The example uses a **Numbers spreadsheet template** and multiple playback devices; you can adapt it to your own setup.
 
+## Installation and Requirements
+
+Before starting the workflow, complete the installation and environment setup:
+
+1. Sign in to the SLAM Cloud portal: <a href="https://cloud.slam.systems/" target="_blank" rel="noopener noreferrer">cloud.slam.systems</a>.  
+2. Go to the **Resources** section and download the latest DIRECTOR COR package.  
+3. Install DIRECTOR COR on your Mac.
+
+Runtime system requirements:
+
+- **macOS 16**  
+- **Numbers.app installed** (required for template import and automation)
+
+## Tutorial Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gLx4z0WvIpU?si=O-4Mld4k3bwDK7ZN" title="SLAM.SYSTEM COR Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+If the embedded player is blocked in your environment, watch here:
+<a href="https://www.youtube.com/watch?v=gLx4z0WvIpU" target="_blank" rel="noopener noreferrer">SLAM.SYSTEM COR Tutorial on YouTube</a>
+
 High-level steps:
 
 1. Create a new DIRECTOR COR project  
@@ -21,6 +41,7 @@ High-level steps:
 1. From the top menu choose `File` → `New`, or use the keyboard shortcut to create a new document.  
 2. After creation, the window title shows `Untitled`, and both the `Assets` and `Playlist` areas are empty.  
 3. The `Preview / Layout` switch is already visible in the top-right corner, but there is no content to preview yet.
+4. Save this document, for example: `Untitled.cor`.
 
 # Step 2: Import from a Numbers Template
 
@@ -111,3 +132,8 @@ Then, in System Settings → Privacy & Security:
 3. Click **Close** to dismiss the dialog, then verify playback on site or in your test environment.
 
 With these steps, you complete the full DIRECTOR COR workflow: create a project, import a template, connect devices, and publish your playlists.
+
+## Additional Video
+
+RGB Controller Configuration: SLAM DECK COR & Nova Controller  
+<a href="https://www.youtube.com/watch?v=FuMLAPr5O3Q" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
