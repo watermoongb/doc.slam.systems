@@ -38,6 +38,7 @@
     - [Start Play](player/start-play.md)
     - [Quit Play](player/quit-play.md)
     - [Diagnosis](player/diagnosis.md)
+    - [Export Playback Report](player/exportReport.md)
 
 # SLAM PLAY COR-HD
 - [COR HD](player-cor/README.md)
